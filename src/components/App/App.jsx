@@ -1,28 +1,23 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import { useState, useEffect } from "react";
+import Layout from "../../layout/Layout";
+import HomePage from "../../pages/Home";
 
 function App() {
-  const [images, setImages] = useState([]);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [{ path: "/", element: <HomePage /> }],
+      errorElement: <h1>404 Not Found</h1>,
+    },
+    {
+      path: "test/:name",
+      element: <h1>Test</h1>,
+    },
+  ]);
 
-  useEffect(() => {
-    fetch("https://api.stockx.vlour.me/search?query=male adidas sneakers")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        let sources = data.hits.map((d) => d.image);
-        setImages(sources);
-      });
-  }, [setImages]); // Empty dependency array to fetch data only once
-
-  let elements = null; // Declare elements variable outside the if block
-
-  if (images) {
-    elements = images.map((image, index) => {
-      return <img key={index} src={image} alt="image" />;
-    });
-  }
-
-  return <div>{elements}</div>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
