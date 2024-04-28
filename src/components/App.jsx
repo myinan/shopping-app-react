@@ -10,13 +10,9 @@ function App() {
       children: [
         {
           path: "/",
-          element: (
-            <main>
-              <h1>This is a main placeholder.</h1>
-            </main>
-          ),
+          element: <HomePage />,
         },
-      ], // element: <HomePage/>
+      ],
       errorElement: <h1>404 Not Found</h1>,
     },
     {

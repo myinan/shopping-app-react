@@ -1,4 +1,14 @@
-import { useEffect } from "react";
+function HomePage() {
+  return (
+    <main>
+      <h1>This is a main placeholder.</h1>
+    </main>
+  );
+}
+
+export default HomePage;
+
+/* import { useEffect } from "react";
 import useProductsData from "../hooks/useProductData";
 
 function HomePage() {
@@ -25,5 +35,4 @@ function HomePage() {
 
   return <main>{elements}</main>;
 }
-
-export default HomePage;
+ */
