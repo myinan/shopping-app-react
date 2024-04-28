@@ -1,14 +1,22 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
-import Layout from "../../layout/Layout";
-import HomePage from "../../pages/Home";
+import Layout from "../layout/Layout";
+import HomePage from "../pages/Home";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout />,
-      children: [{ path: "/", element: <HomePage /> }],
+      children: [
+        {
+          path: "/",
+          element: (
+            <main>
+              <h1>This is a main placeholder.</h1>
+            </main>
+          ),
+        },
+      ], // element: <HomePage/>
       errorElement: <h1>404 Not Found</h1>,
     },
     {

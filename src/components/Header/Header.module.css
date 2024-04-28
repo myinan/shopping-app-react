@@ -1,0 +1,36 @@
+.logoContainer {
+  composes: flexCenter from "../../assets/global.css";
+  flex-direction: column;
+  background-color: #155e75;
+  padding: 2rem;
+}
+
+.mainHeading {
+  font-size: 2.7rem;
+}
+
+.subHeading {
+  font-size: 1.5rem;
+}
+
+.navLinksContainer {
+  composes: flexCenter from "../../assets/global.css";
+  gap: 1rem;
+  background-color: #27272a;
+  padding: 1rem;
+}
+
+.navLinksContainer > a {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.navLinksContainer > a:hover {
+  text-decoration: underline;
+}
+
+.activeNavLink {
+  text-decoration: underline;
+}

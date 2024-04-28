@@ -23,7 +23,7 @@ function HomePage() {
     });
   }
 
-  return <div>{elements}</div>;
+  return <main>{elements}</main>;
 }
 
 export default HomePage;

@@ -1,0 +1,62 @@
+.topFooter {
+  composes: flexCenter from "../../assets/global.css";
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #155e75;
+}
+
+.topFooter > h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e2e8f0;
+}
+
+.topFooter > p {
+  color: #e2e8f0;
+}
+
+.mainFooter {
+  composes: flexCenter from "../../assets/global.css";
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #7dd3fc;
+  padding: 2rem 0rem;
+}
+
+.mainFooterTopSection {
+  composes: flexCenter from "../../assets/global.css";
+  gap: 2rem;
+}
+
+.linksSectionContainer {
+  composes: flexCenter from "../../assets/global.css";
+  gap: 3rem;
+}
+
+.linksBlock {
+  composes: flexCenter from "../../assets/global.css";
+  flex-direction: column;
+}
+
+.contactSectionContainer {
+  composes: flexCenter from "../../assets/global.css";
+  flex-direction: column;
+}
+
+.contactInfoContainer {
+  composes: flexCenter from "../../assets/global.css";
+  gap: 3rem;
+}
+
+.mainFooterBottomSection {
+  composes: flexCenter from "../../assets/global.css";
+  gap: 1.5rem;
+}
+
+.bottomFooter {
+  composes: flexCenter from "../../assets/global.css";
+  flex-direction: column;
+  background-color: #155e75;
+  color: #e2e8f0;
+  padding: 1rem;
+}
