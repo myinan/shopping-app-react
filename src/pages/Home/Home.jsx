@@ -10,8 +10,12 @@ function HomeCarousel() {
       <Carousel.Item>
         <img src={shoeBlack} alt="Black shoe" className={styles.carouselImg} />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Versatile Styles</h3>
+          <p>
+            Explore our versatile collection of shoes that seamlessly transition
+            from day to night, work to play. Find the perfect pair that suits
+            every aspect of your lifestyle.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -21,8 +25,12 @@ function HomeCarousel() {
           className={styles.carouselImg}
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Comfort Redefined</h3>
+          <p>
+            Experience comfort like never before with our range of shoes
+            designed for all-day wear. From plush cushioning to ergonomic
+            support, these shoes redefine what it means to walk on clouds.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -32,9 +40,11 @@ function HomeCarousel() {
           className={styles.carouselImg}
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Understated Elegance</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            Discover the allure of understated elegance with our curated
+            selection of shoes. From minimalist designs to subtle detailing,
+            these shoes exude sophistication with every step.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
