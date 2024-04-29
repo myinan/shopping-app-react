@@ -12,7 +12,9 @@
     "git:log": "git log --oneline --abbrev-commit --all --graph --decorate --color"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "react": "",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "",
     "react-router-dom": "",
     "styled-components": ""
