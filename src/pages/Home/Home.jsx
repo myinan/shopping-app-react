@@ -1,11 +1,13 @@
 import HomeCarousel from "./Carousel";
 import ShopNow from "./ShopNow";
+import LatestPosts from "./LatestPosts";
 
 function HomePage() {
   return (
     <main>
       <HomeCarousel />
       <ShopNow />
+      <LatestPosts />
     </main>
   );
 }
