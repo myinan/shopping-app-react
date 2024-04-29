@@ -3,3 +3,32 @@
   width: 100%;
   object-fit: cover;
 }
+
+.shopNowSection {
+  display: grid;
+  grid-template-columns: 40% auto;
+  gap: 2rem;
+  padding: 2rem 8rem;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shopNowLeftImg {
+  width: 100%;
+  object-fit: contain;
+}
+
+.rightSide {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.shopNowRightImg {
+  width: 100%;
+  object-fit: contain;
+}
