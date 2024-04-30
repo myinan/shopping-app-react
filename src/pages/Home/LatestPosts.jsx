@@ -40,7 +40,7 @@ function Post({ post }) {
 
 Post.propTypes = {
   post: PropTypes.shape({
-    src: PropTypes.object.isRequired,
+    src: PropTypes.string.isRequired,
     head: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     info: PropTypes.string.isRequired,

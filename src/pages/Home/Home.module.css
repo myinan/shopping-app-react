@@ -58,3 +58,8 @@
   height: 460px;
   object-fit: cover;
 }
+
+.featuredContainer {
+  composes: flexCenter from "../../assets/global.css";
+  flex-direction: column;
+}
