@@ -59,7 +59,51 @@
   object-fit: cover;
 }
 
+.featuredProductsContainer h3:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .featuredContainer {
   composes: flexCenter from "../../assets/global.css";
+  padding: 0.5rem 8rem;
+}
+
+.sliderContainer {
+  width: 100%;
+}
+
+.featuredItem {
+  display: flex;
   flex-direction: column;
+  cursor: pointer;
+  height: 500px;
+}
+
+.featuredItem:hover {
+  background-color: burlywood;
+}
+
+.featuredItem img {
+  border: 10px solid rgb(234, 234, 234);
+}
+
+.featuredItem img:hover {
+  border: 10px solid bisque;
+}
+
+.featuredItemInfoContainer {
+  composes: flexCenter from "../../assets/global.css";
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.featuredItemInfoContainer:hover {
+  background-color: burlywood;
+}
+
+.featuredItemInfoContainer .titleAndPriceInfo {
+  display: flex;
+  gap: 4rem;
 }

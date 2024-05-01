@@ -1,0 +1,10 @@
+.slick-slide {
+  background-color: transparent !important;
+  padding: 0 15px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: red !important;
+  font-size: 25px !important;
+}

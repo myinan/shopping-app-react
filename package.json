@@ -17,6 +17,8 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "",
     "react-router-dom": "",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "styled-components": ""
   },
   "devDependencies": {
