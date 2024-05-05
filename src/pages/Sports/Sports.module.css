@@ -8,8 +8,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 30%;
+  width: 40%;
   flex-grow: 1;
+  padding: 0rem 3rem;
+}
+
+.bannerInfoContainer p {
+  text-align: center;
 }
 
 .bannerImgWrapper {
