@@ -4,8 +4,10 @@ import { NavLink } from "react-router-dom";
 function Logo() {
   return (
     <div className={styles.logoContainer}>
-      <h1 className={styles.mainHeading}>SHOE TROVE</h1>
-      <h3 className={styles.subHeading}>FOOTWEAR</h3>
+      <NavLink to="/">
+        <h1 className={styles.mainHeading}>SHOE TROVE</h1>
+        <h3 className={styles.subHeading}>FOOTWEAR</h3>
+      </NavLink>
     </div>
   );
 }
@@ -17,10 +19,18 @@ function NavBar() {
 
   return (
     <div className={styles.navLinksContainer}>
-      <NavLink className={isActive}>Navlink 1</NavLink>
-      <NavLink className={isActive}>Navlink 2</NavLink>
-      <NavLink className={isActive}>Navlink 3</NavLink>
-      <NavLink className={isActive}>Navlink 4</NavLink>
+      <NavLink to="/collection" className={isActive}>
+        COLLECTION
+      </NavLink>
+      <NavLink to="/sports" className={isActive}>
+        SPORTS
+      </NavLink>
+      <NavLink to="/formal" className={isActive}>
+        FORMAL
+      </NavLink>
+      <NavLink to="/about" className={isActive}>
+        ABOUT US
+      </NavLink>
     </div>
   );
 }

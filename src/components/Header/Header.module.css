@@ -5,6 +5,24 @@
   padding: 2rem;
 }
 
+.logoContainer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logoContainer a > * {
+  margin-bottom: 0;
+}
+
+.logoContainer a:hover {
+  transform: scale(1.05);
+}
+
 .mainHeading {
   font-size: 2.7rem;
 }
