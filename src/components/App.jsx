@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../layout/Layout";
 import HomePage from "../pages/Home/Home";
+import SportsPage from "../pages/Sports/Sports";
 import Error from "./Error/Error";
 
 function App() {
@@ -12,6 +13,10 @@ function App() {
         {
           path: "/",
           element: <HomePage />,
+        },
+        {
+          path: "sports",
+          element: <SportsPage />,
         },
       ],
       errorElement: <Error />,

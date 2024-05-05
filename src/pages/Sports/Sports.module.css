@@ -1,0 +1,25 @@
+.sportsBannerContainer {
+  display: flex;
+  background-color: antiquewhite;
+}
+
+.bannerInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 30%;
+  flex-grow: 1;
+}
+
+.bannerImgWrapper {
+  display: flex;
+  max-height: 500px;
+}
+
+.bannerImg {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: auto;
+}
