@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 export default function useProductsData(query) {
   const [productsData, setProductsData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let ignore = false;
@@ -13,14 +15,16 @@ export default function useProductsData(query) {
             setProductsData(data.hits);
           });
       } catch (err) {
-        return err;
+        setError(err);
+      } finally {
+        setLoading(false);
       }
     }
 
     return () => {
       ignore = true;
     };
-  }, [query, setProductsData]);
+  }, [query]);
 
-  return productsData;
+  return { productsData, error, loading };
 }
