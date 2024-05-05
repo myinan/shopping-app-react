@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../layout/Layout";
 import HomePage from "../pages/Home/Home";
+import Error from "./Error/Error";
 
 function App() {
   const router = createBrowserRouter([
@@ -13,7 +14,7 @@ function App() {
           element: <HomePage />,
         },
       ],
-      errorElement: <h1>404 Not Found</h1>,
+      errorElement: <Error />,
     },
     {
       path: "test/:name",
