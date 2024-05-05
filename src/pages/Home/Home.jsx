@@ -1,7 +1,7 @@
-import HomeCarousel from "./Carousel";
-import ShopNow from "./ShopNow";
-import LatestPosts from "./LatestPosts";
-import FeaturedProducts from "./FeaturedProducts";
+import HomeCarousel from "./components/Carousel";
+import ShopNow from "./components/ShopNow";
+import LatestPosts from "./components/LatestPosts";
+import FeaturedProducts from "./components/FeaturedProducts";
 
 function HomePage() {
   return (

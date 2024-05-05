@@ -1,7 +1,7 @@
-import styles from "./Home.module.css";
+import styles from "../Home.module.css";
 import { Link } from "react-router-dom";
-import footwearVertical from "../../assets/shop-now-images/footwear-vertical.jpg";
-import shoesPair from "../../assets/shop-now-images/shoes-pair.jpg";
+import footwearVertical from "../assets/shop-now-images/footwear-vertical.jpg";
+import shoesPair from "../assets/shop-now-images/shoes-pair.jpg";
 
 export default function ShopNow() {
   return (

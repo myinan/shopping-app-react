@@ -1,8 +1,8 @@
-import styles from "./Home.module.css";
+import styles from "../Home.module.css";
 import Carousel from "react-bootstrap/Carousel";
-import shoeBlack from "../../assets/carousel-images/shoe-black.jpg";
-import shoesTriple from "../../assets/carousel-images/shoes-triple.jpg";
-import shoesWalking from "../../assets/carousel-images/shoes-walking.jpg";
+import shoeBlack from "../assets/carousel-images/shoe-black.jpg";
+import shoesTriple from "../assets/carousel-images/shoes-triple.jpg";
+import shoesWalking from "../assets/carousel-images/shoes-walking.jpg";
 
 export default function HomeCarousel() {
   return (

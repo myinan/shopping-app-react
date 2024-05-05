@@ -1,9 +1,9 @@
-import styles from "./Home.module.css";
+import styles from "../Home.module.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import shoesSports from "../../assets/latest-posts-images/shoes-sports.jpg";
-import sneakers from "../../assets/latest-posts-images/sneakers.jpg";
-import shoesMany from "../../assets/latest-posts-images/shoes-many.jpg";
+import shoesSports from "../assets/latest-posts-images/shoes-sports.jpg";
+import sneakers from "../assets/latest-posts-images/sneakers.jpg";
+import shoesMany from "../assets/latest-posts-images/shoes-many.jpg";
 
 const postsData = [
   {

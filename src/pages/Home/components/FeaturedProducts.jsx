@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import useProductsData from "../../hooks/useProductsData";
-import styles from "./Home.module.css";
+import useProductsData from "../../../hooks/useProductsData";
+import styles from "../Home.module.css";
 
-import "./slick.css";
+import "../slick.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
