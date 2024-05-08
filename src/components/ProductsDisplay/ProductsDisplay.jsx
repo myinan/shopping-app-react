@@ -15,7 +15,16 @@ function ProductCell({ product }) {
         )}
       </div>
       <div className={styles.pdCardInfoContainer}>
-        <p>{product.brand}</p>
+        <div className={styles.topInfo}>
+          <p>{product.brand}</p>
+          <p>{product.gender.toUpperCase()}</p>
+        </div>
+        <div className={styles.midInfo}>
+          <p>{product.title}</p>
+        </div>
+        <div className={styles.bottomInfo}>
+          <p>{product.base_price}</p>
+        </div>
       </div>
     </div>
   );
@@ -23,9 +32,10 @@ function ProductCell({ product }) {
 
 ProductCell.propTypes = {
   product: PropTypes.shape({
-    base_price: PropTypes.number.isRequired,
     brand: PropTypes.string.isRequired,
+    base_price: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
 };

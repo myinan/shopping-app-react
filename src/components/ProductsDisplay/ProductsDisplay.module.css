@@ -15,14 +15,20 @@
 .productCard {
   display: block;
   padding: 5px;
-  margin-inline: 20px;
   margin-block: 30px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .pdCardImgWrapper {
   height: 300px;
   overflow: hidden;
+  border: 5px solid wheat;
+  padding: 0 1rem;
+}
+
+.pdCardImgWrapper:hover {
+  border: 5px solid brown;
 }
 
 .pdCardImgWrapper img {
@@ -36,8 +42,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 10px;
-  width: fit-content;
+  width: 100%;
+  background-color: antiquewhite;
+  padding: 0.5rem 1rem 0 1rem;
 }
 
 .sideBarNav {
@@ -53,4 +60,24 @@
 
 .sideBarNavLinkWrapper {
   font: inherit;
+}
+
+.topInfo,
+.midInfo,
+.bottomInfo {
+  display: flex;
+  width: 100%;
+}
+
+.topInfo {
+  justify-content: space-between;
+}
+
+.midInfo,
+.bottomInfo {
+  justify-content: center;
+}
+
+.bottomInfo p::after {
+  content: "$";
 }
