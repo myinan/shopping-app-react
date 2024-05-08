@@ -1,14 +1,19 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
 import useProductsData from "../../../hooks/useProductsData";
 import styles from "../Sports.module.css";
+import ImgNotAvailable from "../assets/image-not-available.png";
 
 function ProductCell({ product }) {
   return (
     <div className={styles.productCard}>
       <div className={styles.pdCardImgWrapper}>
-        <img src={product.image} alt={product.title} />
+        {product.image ? (
+          <img src={product.image} alt={product.title} />
+        ) : (
+          <img src={ImgNotAvailable} alt={product.title} />
+        )}
       </div>
       <div className={styles.pdCardInfoContainer}>
         <p>{product.brand}</p>
