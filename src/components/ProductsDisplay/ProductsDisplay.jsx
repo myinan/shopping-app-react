@@ -1,9 +1,7 @@
-import { useEffect } from "react";
 import PropTypes from "prop-types";
 /* import { Link } from "react-router-dom"; */
-import useProductsData from "../../../hooks/useProductsData";
-import styles from "../Sports.module.css";
-import ImgNotAvailable from "../assets/image-not-available.png";
+import styles from "./ProductsDisplay.module.css";
+import ImgNotAvailable from "./assets/image-not-available.png";
 
 function ProductCell({ product }) {
   return (
@@ -31,27 +29,22 @@ ProductCell.propTypes = {
   }).isRequired,
 };
 
-function ProductsDisplay({ productsData }) {
+function ProductsGrid({ productsData }) {
   return productsData.map((product, index) => {
     return <ProductCell key={index} product={product} />;
   });
 }
 
-export default function SportsShoesSection() {
-  const { productsData, error, loading } = useProductsData("sports shoes");
-
-  useEffect(() => {
-    console.log(productsData);
-  });
-
-  if (error) return <p>A network error was encountered</p>;
-  if (loading) return <p>Loading...</p>;
-
+export default function ProductsDisplaySection({ productsData }) {
   return (
     <div className={styles.productsGridContainer}>
       <div className={styles.productsGrid}>
-        <ProductsDisplay productsData={productsData} />
+        <ProductsGrid productsData={productsData} />
       </div>
     </div>
   );
 }
+
+ProductsDisplaySection.propTypes = {
+  productsData: PropTypes.array.isRequired,
+};
