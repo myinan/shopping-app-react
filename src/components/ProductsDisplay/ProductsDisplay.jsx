@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 /* import { Link } from "react-router-dom"; */
+import { NavLink } from "react-router-dom";
 import styles from "./ProductsDisplay.module.css";
 import ImgNotAvailable from "./assets/image-not-available.png";
 
@@ -35,9 +36,28 @@ function ProductsGrid({ productsData }) {
   });
 }
 
+function SideBarNav() {
+  return (
+    <nav className={styles.sideBarNav}>
+      <ul className={styles.sideBarNavLinks}>
+        <li className={styles.sideBarNavLinkWrapper}>
+          <NavLink to="/collection">All Products</NavLink>
+        </li>
+        <li className={styles.sideBarNavLinkWrapper}>
+          <NavLink to="/sports">Sports Footwear</NavLink>
+        </li>
+        <li className={styles.sideBarNavLinkWrapper}>
+          <NavLink to="/formal">Formal Footwear</NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
 export default function ProductsDisplaySection({ productsData }) {
   return (
-    <div className={styles.productsGridContainer}>
+    <div className={styles.productsWrapper}>
+      <SideBarNav />
       <div className={styles.productsGrid}>
         <ProductsGrid productsData={productsData} />
       </div>

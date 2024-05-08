@@ -1,7 +1,7 @@
-.productsGridContainer {
+.productsWrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 3.5rem;
   padding: 3rem 8rem;
 }
 
@@ -9,7 +9,7 @@
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 10px;
+  column-gap: 20px;
 }
 
 .productCard {
@@ -38,4 +38,19 @@
   justify-content: flex-start;
   margin-top: 10px;
   width: fit-content;
+}
+
+.sideBarNav {
+  min-width: 200px;
+}
+
+.sideBarNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.sideBarNavLinkWrapper {
+  font: inherit;
 }
