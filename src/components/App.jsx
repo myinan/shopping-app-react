@@ -3,6 +3,7 @@ import Layout from "../layout/Layout";
 import HomePage from "../pages/Home/Home";
 import SportsPage from "../pages/Sports/Sports";
 import BootsPage from "../pages/Boots/Boots";
+import CollectionPage from "../pages/Collection/Collection";
 import Error from "./Error/Error";
 
 function App() {
@@ -23,6 +24,11 @@ function App() {
         {
           path: "boots",
           element: <BootsPage />,
+        },
+
+        {
+          path: "collection",
+          element: <CollectionPage />,
         },
       ],
       errorElement: <Error />,
