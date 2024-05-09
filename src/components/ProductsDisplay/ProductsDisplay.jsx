@@ -1,8 +1,10 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
 /* import { Link } from "react-router-dom"; */
 import { NavLink } from "react-router-dom";
 import styles from "./ProductsDisplay.module.css";
 import ImgNotAvailable from "./assets/image-not-available.png";
+import Pagination from "./components/Pagination";
 
 function ProductCell({ product }) {
   return (
@@ -65,12 +67,31 @@ function SideBarNav() {
 }
 
 export default function ProductsDisplaySection({ productsData }) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(6);
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = productsData.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  function paginate(pageNum) {
+    setCurrentPage(pageNum);
+  }
+
   return (
     <div className={styles.productsWrapper}>
       <SideBarNav />
       <div className={styles.productsGrid}>
-        <ProductsGrid productsData={productsData} />
+        <ProductsGrid productsData={currentProducts} />
       </div>
+      <Pagination
+        productsPerPage={productsPerPage}
+        totalProducts={productsData.length}
+        paginate={paginate}
+      />
     </div>
   );
 }

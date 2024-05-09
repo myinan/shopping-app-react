@@ -1,0 +1,9 @@
+.pageNumLink {
+  cursor: pointer;
+  text-decoration: none;
+  color: red;
+}
+
+.pageNumLink:hover {
+  text-decoration: underline;
+}
