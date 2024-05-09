@@ -1,6 +1,17 @@
-import SportsBanner from "./components/SportsBanner";
+import ProductsBanner from "../../components/ProductsBanner/ProductsBanner";
 import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDisplay";
 import useProductsData from "../../hooks/useProductsData";
+import shoesOnSand from "./assets/shoes-on-sand.jpg";
+
+const heading = "SPORTS SHOP";
+const text = `Step up your game with our top-notch selection of sports footwear. Whether
+you&apos;re hitting the court, the track, or the gym, we&apos;ve got you
+covered with a range of styles and technologies to suit every
+athlete&apos;s needs. From lightweight running shoes engineered for speed
+to durable basketball sneakers built for agility and support, our
+collection offers the perfect blend of style, functionality, and
+durability.`;
+const imageAltText = "Sports Shoes";
 
 export default function SportsPage() {
   const { productsData, error, loading } = useProductsData("sports shoes");
@@ -10,7 +21,12 @@ export default function SportsPage() {
 
   return (
     <main>
-      <SportsBanner />
+      <ProductsBanner
+        heading={heading}
+        text={text}
+        imageSource={shoesOnSand}
+        imageAltText={imageAltText}
+      />
       <ProductsDisplaySection productsData={productsData} />
     </main>
   );
