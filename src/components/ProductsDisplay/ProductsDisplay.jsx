@@ -65,7 +65,7 @@ function SideBarNav() {
           <NavLink to="/sports">Sports Footwear</NavLink>
         </li>
         <li className={styles.sideBarNavLinkWrapper}>
-          <NavLink to="/formal">Formal Footwear</NavLink>
+          <NavLink to="/boots">Winter Footwear</NavLink>
         </li>
       </ul>
     </nav>
