@@ -1,0 +1,30 @@
+.BootsBannerContainer {
+  display: flex;
+  background-color: antiquewhite;
+}
+
+.bannerInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  flex-grow: 1;
+  padding: 0rem 3rem;
+}
+
+.bannerInfoContainer p {
+  text-align: center;
+}
+
+.bannerImgWrapper {
+  display: flex;
+  max-height: 500px;
+}
+
+.bannerImg {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: auto;
+}

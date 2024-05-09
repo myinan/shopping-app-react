@@ -25,8 +25,8 @@ function NavBar() {
       <NavLink to="/sports" className={isActive}>
         SPORTS
       </NavLink>
-      <NavLink to="/formal" className={isActive}>
-        FORMAL
+      <NavLink to="/boots" className={isActive}>
+        BOOTS
       </NavLink>
       <NavLink to="/about" className={isActive}>
         ABOUT US
