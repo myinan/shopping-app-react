@@ -10,7 +10,8 @@ function ProductCell({ product }) {
   return (
     <div className={styles.productCard}>
       <div className={styles.pdCardImgWrapper}>
-        {product.image ? (
+        {product.image &&
+        product.id !== "e87c0e9f-e3d3-4f3b-b0df-a165682bee4c" ? (
           <img src={product.image} alt={product.title} />
         ) : (
           <img src={ImgNotAvailable} alt={product.title} />
@@ -38,6 +39,7 @@ function ProductCell({ product }) {
 
 ProductCell.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     brand: PropTypes.string.isRequired,
     base_price: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
