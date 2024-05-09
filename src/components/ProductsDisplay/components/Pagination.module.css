@@ -1,9 +1,31 @@
+.pageNumsTopNav {
+  composes: flexCenter from "../../../assets/global.css";
+}
+
+.pageNumsList {
+  composes: flexCenter from "../../../assets/global.css";
+  list-style: none;
+  gap: 2rem;
+}
+
+.pageNumListItem {
+  font-size: 1.5rem;
+}
+
 .pageNumLink {
   cursor: pointer;
   text-decoration: none;
-  color: red;
+  color: black;
+  padding: 0 0.3rem;
+  border-radius: 4px;
 }
 
 .pageNumLink:hover {
-  text-decoration: underline;
+  background-color: orange;
+  color: white;
+}
+
+.selected {
+  background-color: orange;
+  color: white;
 }

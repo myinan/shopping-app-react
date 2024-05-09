@@ -86,15 +86,19 @@ export default function ProductsDisplaySection({ productsData }) {
   }
 
   return (
-    <div className={styles.productsWrapper}>
-      <SideBarNav />
-      <div className={styles.productsGrid}>
-        <ProductsGrid productsData={currentProducts} />
+    <div className={styles.productsTopWrapper}>
+      <div className={styles.sideBarAndProductsWrapper}>
+        <SideBarNav />
+        <div className={styles.productsGrid}>
+          <ProductsGrid productsData={currentProducts} />
+        </div>
       </div>
+
       <Pagination
         productsPerPage={productsPerPage}
         totalProducts={productsData.length}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </div>
   );

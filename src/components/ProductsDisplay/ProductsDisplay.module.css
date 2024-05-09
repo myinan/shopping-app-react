@@ -1,8 +1,12 @@
-.productsWrapper {
+.productsTopWrapper {
   display: flex;
   justify-content: center;
-  gap: 3.5rem;
+  flex-direction: column;
   padding: 3rem 8rem;
+}
+
+.sideBarAndProductsWrapper {
+  display: flex;
 }
 
 .productsGrid {

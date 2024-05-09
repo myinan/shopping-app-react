@@ -5,6 +5,7 @@ export default function Pagination({
   productsPerPage,
   totalProducts,
   paginate,
+  currentPage,
 }) {
   const pageNumbers = [];
 
@@ -13,14 +14,14 @@ export default function Pagination({
   }
 
   return (
-    <nav>
-      <ul>
+    <nav className={styles.pageNumsTopNav}>
+      <ul className={styles.pageNumsList}>
         {pageNumbers.map((number) => {
           return (
-            <li key={number}>
+            <li key={number} className={styles.pageNumListItem}>
               <a
                 onClick={() => paginate(number)}
-                className={styles.pageNumLink}
+                className={`${styles.pageNumLink} ${currentPage === number ? styles.selected : ""}`}
               >
                 {number}
               </a>
@@ -36,4 +37,5 @@ Pagination.propTypes = {
   productsPerPage: PropTypes.number.isRequired,
   totalProducts: PropTypes.number.isRequired,
   paginate: PropTypes.func.isRequired,
+  currentPage: PropTypes.number.isRequired,
 };
