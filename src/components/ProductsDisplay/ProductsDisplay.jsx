@@ -22,7 +22,11 @@ function ProductCell({ product }) {
           <p>{product.gender.toUpperCase()}</p>
         </div>
         <div className={styles.midInfo}>
-          <p>{product.title}</p>
+          {product.title.length > 40 ? (
+            <p>{product.title.substring(0, 40) + "..."}</p>
+          ) : (
+            <p>{product.title}</p>
+          )}
         </div>
         <div className={styles.bottomInfo}>
           <p>{product.base_price}</p>
