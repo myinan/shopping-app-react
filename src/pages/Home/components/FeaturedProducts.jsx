@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import useProductsData from "../../../hooks/useProductsData";
+import { useOutletContext } from "react-router-dom";
 import styles from "../Home.module.css";
 
 import "../slick.css";
@@ -82,19 +81,16 @@ FeaturedsCarousel.propTypes = {
 };
 
 export default function FeaturedProducts() {
-  const { productsData, error, loading } = useProductsData("shoes popular");
+  /* const { productsData, error, loading } = useProductsData("shoes popular"); */
+  const { featuredData, featuredError, featuredLoading } = useOutletContext();
 
-  useEffect(() => {
-    console.log(productsData);
-  });
-
-  if (error) return <p>A network error was encountered</p>;
-  if (loading) return <p>Loading...</p>;
+  if (featuredError) return <p>A network error was encountered</p>;
+  if (featuredLoading) return <p>Loading...</p>;
 
   return (
     <div className={styles.featuredProductsContainer}>
       <h3>New Arrivals</h3>
-      <FeaturedsCarousel products={productsData} />
+      <FeaturedsCarousel products={featuredData} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import ProductsBanner from "../../components/ProductsBanner/ProductsBanner";
 import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDisplay";
-import useProductsData from "../../hooks/useProductsData";
 import shoesOnSand from "./assets/shoes-on-sand.jpg";
+import { useOutletContext } from "react-router-dom";
 
 const heading = "SPORTS SHOP";
 const text = `Step up your game with our top-notch selection of sports footwear. Whether
@@ -14,10 +14,10 @@ durability.`;
 const imageAltText = "Sports Shoes";
 
 export default function SportsPage() {
-  const { productsData, error, loading } = useProductsData("sports shoes");
+  const { sportsData, bootsError, bootsLoading } = useOutletContext();
 
-  if (error) return <p>A network error was encountered</p>;
-  if (loading) return <p>Loading...</p>;
+  if (bootsError) return <p>A network error was encountered</p>;
+  if (bootsLoading) return <p>Loading...</p>;
 
   return (
     <main>
@@ -27,7 +27,7 @@ export default function SportsPage() {
         imageSource={shoesOnSand}
         imageAltText={imageAltText}
       />
-      <ProductsDisplaySection productsData={productsData} />
+      <ProductsDisplaySection productsData={sportsData} />
     </main>
   );
 }
