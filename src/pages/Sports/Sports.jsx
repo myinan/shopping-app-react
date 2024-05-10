@@ -14,10 +14,11 @@ durability.`;
 const imageAltText = "Sports Shoes";
 
 export default function SportsPage() {
-  const { sportsData, sportsError, sportsLoading } = useOutletContext();
+  const { sportsData } = useOutletContext();
+  const { productsData, error, loading } = sportsData;
 
-  if (sportsError) return <p>A network error was encountered</p>;
-  if (sportsLoading) return <p>Loading...</p>;
+  if (error) return <p>A network error was encountered</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <main>
@@ -27,7 +28,7 @@ export default function SportsPage() {
         imageSource={shoesOnSand}
         imageAltText={imageAltText}
       />
-      <ProductsDisplaySection productsData={sportsData} />
+      <ProductsDisplaySection productsData={productsData} />
     </main>
   );
 }

@@ -12,10 +12,11 @@ or wandering off the beaten path, find your perfect pair of boots here.`;
 const imageAltText = "Winter Boots";
 
 export default function BootsPage() {
-  const { bootsData, bootsError, bootsLoading } = useOutletContext();
+  const { bootsData } = useOutletContext();
+  const { productsData, error, loading } = bootsData;
 
-  if (bootsError) return <p>A network error was encountered</p>;
-  if (bootsLoading) return <p>Loading...</p>;
+  if (error) return <p>A network error was encountered</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <main>
@@ -25,7 +26,7 @@ export default function BootsPage() {
         imageSource={winterBoots}
         imageAltText={imageAltText}
       />
-      <ProductsDisplaySection productsData={bootsData} />
+      <ProductsDisplaySection productsData={productsData} />
     </main>
   );
 }

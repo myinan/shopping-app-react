@@ -8,16 +8,21 @@ const text = `...`;
 const imageAltText = "Collection Footwear";
 
 export default function CollectionPage() {
-  const {
-    bootsData,
-    bootsError,
-    bootsLoading,
-    sportsData,
-    sportsError,
-    sportsLoading,
-  } = useOutletContext();
+  const { bootsData, sportsData } = useOutletContext();
 
-  const mergedData = [...sportsData, ...bootsData];
+  const {
+    productsData: sportsContextData,
+    error: sportsError,
+    loading: sportsLoading,
+  } = sportsData;
+
+  const {
+    productsData: bootsContextData,
+    error: bootsError,
+    loading: bootsLoading,
+  } = bootsData;
+
+  const mergedData = [...sportsContextData, ...bootsContextData];
 
   if (bootsError || sportsError) return <p>A network error was encountered</p>;
   if (bootsLoading || sportsLoading) return <p>Loading...</p>;
