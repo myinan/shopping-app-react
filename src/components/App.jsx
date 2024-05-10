@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../layout/Layout";
 import HomePage from "../pages/Home/Home";
+import CollectionPage from "../pages/Collection/Collection";
 import SportsPage from "../pages/Sports/Sports";
 import BootsPage from "../pages/Boots/Boots";
-import CollectionPage from "../pages/Collection/Collection";
+import AboutUsPage from "../pages/AboutUs/AboutUs";
 import Error from "./Error/Error";
 
 function App() {
@@ -18,6 +19,11 @@ function App() {
         },
 
         {
+          path: "collection",
+          element: <CollectionPage />,
+        },
+
+        {
           path: "sports",
           element: <SportsPage />,
         },
@@ -28,8 +34,8 @@ function App() {
         },
 
         {
-          path: "collection",
-          element: <CollectionPage />,
+          path: "about",
+          element: <AboutUsPage />,
         },
 
         {
