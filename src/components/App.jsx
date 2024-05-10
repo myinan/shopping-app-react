@@ -16,6 +16,7 @@ function App() {
           path: "/",
           element: <HomePage />,
         },
+
         {
           path: "sports",
           element: <SportsPage />,
@@ -29,6 +30,11 @@ function App() {
         {
           path: "collection",
           element: <CollectionPage />,
+        },
+
+        {
+          path: "*", // Match any other path within Layout
+          element: <Error />,
         },
       ],
       errorElement: <Error />,
