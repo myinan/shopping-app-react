@@ -1,14 +1,16 @@
 import ProductsBanner from "../../components/ProductsBanner/ProductsBanner";
 import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDisplay";
 import shoesCollection from "./assets/shoes-collection.jpg";
-import { useOutletContext } from "react-router-dom";
+import { useContext } from "react";
+import ProductDataContext from "../../contexts/ProductDataContext";
+/* import CartContext from "../../contexts/CartContext"; */
 
 const heading = "COLLECTION";
 const text = `...`;
 const imageAltText = "Collection Footwear";
 
 export default function CollectionPage() {
-  const { bootsData, sportsData } = useOutletContext();
+  const { bootsData, sportsData } = useContext(ProductDataContext);
 
   const {
     productsData: sportsContextData,

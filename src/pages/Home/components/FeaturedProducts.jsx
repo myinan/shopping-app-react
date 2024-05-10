@@ -1,7 +1,9 @@
+import styles from "../Home.module.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { useOutletContext } from "react-router-dom";
-import styles from "../Home.module.css";
+import { useContext } from "react";
+import ProductDataContext from "../../../contexts/ProductDataContext";
+/* import CartContext from "../../../contexts/CartContext"; */
 
 import "../slick.css";
 import Slider from "react-slick";
@@ -81,7 +83,7 @@ FeaturedsCarousel.propTypes = {
 };
 
 export default function FeaturedProducts() {
-  const { featuredData } = useOutletContext();
+  const { featuredData } = useContext(ProductDataContext);
   const { productsData, error, loading } = featuredData;
 
   if (error) return <p>A network error was encountered</p>;

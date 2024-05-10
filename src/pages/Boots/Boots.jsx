@@ -1,7 +1,9 @@
 import ProductsBanner from "../../components/ProductsBanner/ProductsBanner";
 import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDisplay";
 import winterBoots from "./assets/winter-boots.jpg";
-import { useOutletContext } from "react-router-dom";
+import { useContext } from "react";
+import ProductDataContext from "../../contexts/ProductDataContext";
+/* import CartContext from "../../contexts/CartContext"; */
 
 const heading = "BOOTS SHOP";
 const text = `Explore our curated range of boots designed to 
@@ -12,7 +14,7 @@ or wandering off the beaten path, find your perfect pair of boots here.`;
 const imageAltText = "Winter Boots";
 
 export default function BootsPage() {
-  const { bootsData } = useOutletContext();
+  const { bootsData } = useContext(ProductDataContext);
   const { productsData, error, loading } = bootsData;
 
   if (error) return <p>A network error was encountered</p>;

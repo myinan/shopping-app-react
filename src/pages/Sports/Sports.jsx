@@ -1,7 +1,9 @@
 import ProductsBanner from "../../components/ProductsBanner/ProductsBanner";
 import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDisplay";
 import shoesOnSand from "./assets/shoes-on-sand.jpg";
-import { useOutletContext } from "react-router-dom";
+import { useContext } from "react";
+import ProductDataContext from "../../contexts/ProductDataContext";
+/* import CartContext from "../contexts/CartContext"; */
 
 const heading = "SPORTS SHOP";
 const text = `Step up your game with our top-notch selection of sports footwear. Whether
@@ -14,7 +16,7 @@ durability.`;
 const imageAltText = "Sports Shoes";
 
 export default function SportsPage() {
-  const { sportsData } = useOutletContext();
+  const { sportsData } = useContext(ProductDataContext);
   const { productsData, error, loading } = sportsData;
 
   if (error) return <p>A network error was encountered</p>;

@@ -1,22 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import useOutletContextData from "../hooks/useContextData";
-
-import { useEffect } from "react";
+import ContextProvider from "../contexts/ContextProvider";
 
 export default function Layout() {
-  const contextObj = useOutletContextData();
-
-  useEffect(() => {
-    console.log("rendered");
-  });
-
   return (
-    <>
+    <ContextProvider>
       <Header />
-      <Outlet context={contextObj} />
+      <Outlet />
       <Footer />
-    </>
+    </ContextProvider>
   );
 }
