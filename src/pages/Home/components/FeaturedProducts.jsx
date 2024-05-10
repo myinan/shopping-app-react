@@ -81,16 +81,16 @@ FeaturedsCarousel.propTypes = {
 };
 
 export default function FeaturedProducts() {
-  /* const { productsData, error, loading } = useProductsData("shoes popular"); */
-  const { featuredData, featuredError, featuredLoading } = useOutletContext();
+  const { featuredData } = useOutletContext();
+  const { productsData, error, loading } = featuredData;
 
-  if (featuredError) return <p>A network error was encountered</p>;
-  if (featuredLoading) return <p>Loading...</p>;
+  if (error) return <p>A network error was encountered</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className={styles.featuredProductsContainer}>
       <h3>New Arrivals</h3>
-      <FeaturedsCarousel products={featuredData} />
+      <FeaturedsCarousel products={productsData} />
     </div>
   );
 }
