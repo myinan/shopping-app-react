@@ -1,13 +1,20 @@
 import styles from "../AboutUs.module.css";
-import SneakersTop from "../assets/story-main-images/story-main-top-sneakers.jpg";
+import { Link } from "react-router-dom";
+import sneakersTop from "../assets/story-main-images/story-main-top-sneakers.jpg";
+import sneakersMiddle from "../assets/story-main-images/story-main-middle-sneakers.jpg";
+import bootsBottom from "../assets/story-main-images/story-main-bottom-boots.jpg";
 
 function SubSectionTop() {
   return (
     <div className={styles.storyMainSubSection}>
-      <div className={styles.subSectionImgWrapper}>
-        <img src={SneakersTop} alt="Sneakers" />
+      <div
+        className={`${styles.subSectionImgWrapper} ${styles.ImgWrapperLeft}`}
+      >
+        <img src={sneakersTop} alt="Sneakers" />
       </div>
-      <div className={styles.subSectionInfoContainer}>
+      <div
+        className={`${styles.subSectionInfoContainer} ${styles.InfoContainerRight}`}
+      >
         <h2 className={styles.subSectionInfoHeader}>About Us</h2>
         <p className={styles.subSectionInfoText}>
           ShoeTrove was founded with a clear mission - to offer a diverse
@@ -26,6 +33,9 @@ function SubSectionTop() {
           alike, ShoeTrove remains dedicated to redefining the boundaries of
           footwear fashion.
         </p>
+        <Link to="/collection" className={styles.subSectionLink}>
+          Browse Collection
+        </Link>
       </div>
     </div>
   );
@@ -34,14 +44,36 @@ function SubSectionTop() {
 function SubSectionMiddle() {
   return (
     <div className={styles.storyMainSubSection}>
-      <div className={styles.subSectionImgWrapper}>
-        <img src="" alt="Sub Section Img" />
+      <div
+        className={`${styles.subSectionInfoContainer} ${styles.InfoContainerLeft}`}
+      >
+        <h2 className={styles.subSectionInfoHeader}>Stylish Sneakers</h2>
+        <p className={styles.subSectionInfoText}>
+          At ShoeTrove, we champion the belief that everyone deserves access to
+          fashionable and high-quality sneakers. Our dedication to excellence
+          drives us to curate a meticulously crafted selection of sneakers that
+          embody the perfect blend of style and functionality.
+        </p>
+        <p className={styles.subSectionInfoText}>
+          From classic silhouettes to the latest releases, our sneaker
+          collection caters to every taste and preference, ensuring that our
+          customers can effortlessly find the perfect pair to elevate their
+          style.
+        </p>
+        <p className={styles.subSectionInfoText}>
+          Our unwavering commitment to offering stylish sneakers remains at the
+          forefront of our mission. We take immense pride in providing footwear
+          that not only reflects the latest trends but also meets the highest
+          standards of quality and craftsmanship.
+        </p>
+        <Link to="/sports" className={styles.subSectionLink}>
+          Browse Sneakers
+        </Link>
       </div>
-      <div className={styles.subSectionInfoContainer}>
-        <h2 className={styles.subSectionInfoHeader}> Sub Section Header</h2>
-        <p className={styles.subSectionInfoText}>Text 1</p>
-        <p className={styles.subSectionInfoText}>Text 2</p>
-        <p className={styles.subSectionInfoText}>Text 3</p>
+      <div
+        className={`${styles.subSectionImgWrapper} ${styles.ImgWrapperRight}`}
+      >
+        <img src={sneakersMiddle} alt="Sneakers" />
       </div>
     </div>
   );
@@ -50,14 +82,35 @@ function SubSectionMiddle() {
 function SubSectionBottom() {
   return (
     <div className={styles.storyMainSubSection}>
-      <div className={styles.subSectionImgWrapper}>
-        <img src="" alt="Sub Section Img" />
+      <div
+        className={`${styles.subSectionImgWrapper} ${styles.ImgWrapperLeft}`}
+      >
+        <img src={bootsBottom} alt="Boots" />
       </div>
-      <div className={styles.subSectionInfoContainer}>
-        <h2 className={styles.subSectionInfoHeader}> Sub Section Header</h2>
-        <p className={styles.subSectionInfoText}>Text 1</p>
-        <p className={styles.subSectionInfoText}>Text 2</p>
-        <p className={styles.subSectionInfoText}>Text 3</p>
+      <div
+        className={`${styles.subSectionInfoContainer} ${styles.InfoContainerRight}`}
+      >
+        <h2 className={styles.subSectionInfoHeader}>Quality Boots</h2>
+        <p className={styles.subSectionInfoText}>
+          Here, we prioritize the fusion of style and durability in every boot
+          we offer. Our commitment to excellence drives us to curate a
+          discerningly crafted selection of boots that embody superior quality
+          and timeless elegance.
+        </p>
+        <p className={styles.subSectionInfoText}>
+          From sophisticated urban designs to rugged outdoor essentials, our
+          boot collection caters to diverse tastes and preferences, ensuring our
+          customers can confidently find the perfect pair for any occasion.
+        </p>
+        <p className={styles.subSectionInfoText}>
+          Our unwavering dedication to providing quality boots underscores our
+          mission. We take pride in delivering footwear that not only aligns
+          with contemporary trends but also upholds the highest standards of
+          craftsmanship and longevity.
+        </p>
+        <Link to="/boots" className={styles.subSectionLink}>
+          Browse Boots
+        </Link>
       </div>
     </div>
   );
