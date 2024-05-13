@@ -1,3 +1,51 @@
-.errorHeader {
-  color: red;
+.errorPageTopContainer {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem auto;
+  text-align: center;
+}
+
+.errorPageTopContainer p {
+  width: 60%;
+}
+
+.errorPageImgWrapper {
+  width: 650px;
+  height: auto;
+  overflow: hidden;
+}
+
+.errorPageImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s linear;
+  filter: grayscale(100%) contrast(105%) brightness(102%);
+}
+
+.errorPageImgWrapper:hover .errorPageImg {
+  transform: scale(1.1);
+}
+
+.errorPageLinksContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+}
+
+.errorPageLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.7rem;
+  border-radius: 5px;
+  text-decoration: none;
 }
