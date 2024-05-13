@@ -6,6 +6,7 @@ import SportsPage from "../pages/Sports/Sports";
 import BootsPage from "../pages/Boots/Boots";
 import AboutUsPage from "../pages/AboutUs/AboutUs";
 import Error from "./Error/Error";
+import ProductDetailsPage from "./ProductDetails/ProductDetails";
 
 function App() {
   const router = createBrowserRouter([
@@ -39,8 +40,8 @@ function App() {
         },
 
         {
-          path: "collection/:name",
-          element: <h1>Test</h1>,
+          path: "collection/:productId",
+          element: <ProductDetailsPage />,
         },
 
         {
