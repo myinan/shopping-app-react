@@ -1,3 +1,29 @@
-.red {
-  color: red;
+.productPage {
+  display: flex;
+  gap: 2rem;
+  padding: 5rem;
+}
+
+.productImgContainer {
+  width: 650px;
+  height: auto;
+  overflow: hidden;
+}
+
+.productImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.productDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.productDetailPrice::after {
+  content: "$";
 }
