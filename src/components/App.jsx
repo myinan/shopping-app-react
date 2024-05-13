@@ -39,15 +39,16 @@ function App() {
         },
 
         {
+          path: "collection/:name",
+          element: <h1>Test</h1>,
+        },
+
+        {
           path: "*", // Match any other path within Layout
           element: <Error />,
         },
       ],
       errorElement: <Error />,
-    },
-    {
-      path: "test/:name",
-      element: <h1>Test</h1>,
     },
   ]);
 
