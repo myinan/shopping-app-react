@@ -1,14 +1,16 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-/* import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import styles from "./ProductsDisplay.module.css";
 import ImgNotAvailable from "./assets/image-not-available.png";
 import Pagination from "./components/Pagination";
 
 function ProductCell({ product }) {
+  const address = `/collection/${product.id}`;
+
   return (
-    <div className={styles.productCard}>
+    <Link to={address} className={styles.productCard}>
       <div className={styles.pdCardImgWrapper}>
         {product.image &&
         product.id !== "e87c0e9f-e3d3-4f3b-b0df-a165682bee4c" ? (
@@ -33,7 +35,7 @@ function ProductCell({ product }) {
           <p>{product.base_price}</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -11,8 +11,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function FeaturedProduct({ product }) {
+  const address = `/collection/${product.id}`;
   return (
-    <Link to="/test">
+    <Link to={address}>
       <div className={styles.featuredItem}>
         <img src={product.image} alt={product.title} />
         <div className={styles.featuredItemInfoContainer}>
@@ -29,6 +30,7 @@ function FeaturedProduct({ product }) {
 
 FeaturedProduct.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     base_price: PropTypes.number.isRequired,
     brand: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
