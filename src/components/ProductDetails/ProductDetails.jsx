@@ -1,5 +1,5 @@
 import styles from "./ProductDetails.module.css";
-import { useContext, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductDataContext from "../../contexts/ProductDataContext";
 import ImgNotAvailable from "./assets/image-not-available.png";
@@ -15,6 +15,16 @@ export default function ProductDetailsPage() {
 
   const productsArray = [...dataB, ...dataS, ...dataF];
   const curElement = productsArray.find((product) => product.id === productId);
+
+  const [selectedVariant, setSelectedVariant] = useState(
+    curElement.variants[0]
+  );
+
+  // Event handler to update the selected variant object
+  const handleVariantSelect = (event) => {
+    const selectedVariantObject = JSON.parse(event.target.value);
+    setSelectedVariant(selectedVariantObject);
+  };
 
   useEffect(() => {
     console.log(curElement);
@@ -39,13 +49,41 @@ export default function ProductDetailsPage() {
         )}
       </div>
       <div className={styles.productDetailsContainer}>
+        <div className={styles.productDetailTop}>
+          <h4 className={styles.productDetailBrand}>
+            {curElement.title.split(" ").slice(0, 1).join(" ")}
+          </h4>
+          <p className={styles.productDetailGender}>
+            {curElement.gender.toUpperCase()}
+          </p>
+        </div>
         <h2 className={styles.productDetailTitle}>
-          {curElement.title.split(" ").slice(0, 4).join(" ")}
+          {curElement.title.split(" ").slice(1, 4).join(" ")}
         </h2>
-        <p className={styles.productDetailPrice}>{curElement.base_price}</p>
-        <p className={styles.productDetailDescription}>
-          {curElement.description}
-        </p>
+        <p className={styles.productDetailPrice}>{selectedVariant.price}</p>
+        <div className={styles.productDetailDescription}>
+          <p>Product Details here...</p>
+
+          <div className={styles.selectContainer}>
+            <label htmlFor="shoe-size">Size:</label>
+            <div className={styles.selectWrapper}>
+              <select
+                name="sizes"
+                id="shoe-size"
+                onChange={handleVariantSelect}
+              >
+                {curElement.variants.map((variant, index) => {
+                  return (
+                    <option key={index} value={JSON.stringify(variant)}>
+                      {variant.size}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+            <p>*Price may vary depending on shoe size.</p>
+          </div>
+        </div>
       </div>
     </main>
   );
