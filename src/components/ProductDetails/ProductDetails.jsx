@@ -15,10 +15,11 @@ export default function ProductDetailsPage() {
 
   const productsArray = [...dataB, ...dataS, ...dataF];
   const curElement = productsArray.find((product) => product.id === productId);
+  let sortedVariantsArr = curElement.variants
+    .slice()
+    .sort((a, b) => a.size - b.size);
 
-  const [selectedVariant, setSelectedVariant] = useState(
-    curElement.variants[0]
-  );
+  const [selectedVariant, setSelectedVariant] = useState(sortedVariantsArr[0]);
 
   // Event handler to update the selected variant object
   const handleVariantSelect = (event) => {
@@ -66,21 +67,16 @@ export default function ProductDetailsPage() {
 
           <div className={styles.selectContainer}>
             <label htmlFor="shoe-size">Size:</label>
-            <div className={styles.selectWrapper}>
-              <select
-                name="sizes"
-                id="shoe-size"
-                onChange={handleVariantSelect}
-              >
-                {curElement.variants.map((variant, index) => {
-                  return (
-                    <option key={index} value={JSON.stringify(variant)}>
-                      {variant.size}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
+            <select name="sizes" id="shoe-size" onChange={handleVariantSelect}>
+              {sortedVariantsArr.map((variant, index) => {
+                return (
+                  <option key={index} value={JSON.stringify(variant)}>
+                    {variant.size}
+                  </option>
+                );
+              })}
+            </select>
+
             <p>*Price may vary depending on shoe size.</p>
           </div>
         </div>

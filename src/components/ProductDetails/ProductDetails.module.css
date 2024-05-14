@@ -53,8 +53,3 @@
 .productDetailDescription {
   letter-spacing: 0.5px;
 }
-
-.selectWrapper {
-  max-height: 120px;
-  overflow-y: auto;
-}
