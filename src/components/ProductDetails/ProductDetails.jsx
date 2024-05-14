@@ -66,19 +66,36 @@ export default function ProductDetailsPage() {
           <p>Product Details here...</p>
 
           <div className={styles.selectContainer}>
-            <label htmlFor="shoe-size">Size:</label>
-            <select name="sizes" id="shoe-size" onChange={handleVariantSelect}>
-              {sortedVariantsArr.map((variant, index) => {
-                return (
-                  <option key={index} value={JSON.stringify(variant)}>
-                    {variant.size}
-                  </option>
-                );
-              })}
-            </select>
+            <div className={styles.sizeAndQuantityContainer}>
+              <div className={styles.labelAndSelectMenu}>
+                <label htmlFor="shoe-size">Size:</label>
+                <select
+                  name="sizes"
+                  id="shoe-size"
+                  onChange={handleVariantSelect}
+                >
+                  {sortedVariantsArr.map((variant, index) => {
+                    return (
+                      <option key={index} value={JSON.stringify(variant)}>
+                        {variant.size}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+
+              <div className={styles.quantityInput}>
+                <label>Quantity:</label>
+                <input type="number" max={14} min={1}></input>
+              </div>
+            </div>
 
             <p>*Price may vary depending on shoe size.</p>
           </div>
+        </div>
+
+        <div className={styles.productButtonsContainer}>
+          <button type="button">ADD TO CART</button>
         </div>
       </div>
     </main>
