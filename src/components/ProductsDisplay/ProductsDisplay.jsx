@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import styles from "./ProductsDisplay.module.css";
-import ImgNotAvailable from "./assets/image-not-available.png";
+import ImgNotAvailable from "../../assets/image-not-available.png";
 import Pagination from "./components/Pagination";
 
 function ProductCell({ product }) {
