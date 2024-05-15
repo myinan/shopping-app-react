@@ -1,13 +1,20 @@
 import styles from "./Header.module.css";
 import { NavLink } from "react-router-dom";
+import SearchOffCanvas from "./components/SearchOffCanvas";
 
-function Logo() {
+function LogoAndButtons() {
   return (
-    <div className={styles.logoContainer}>
-      <NavLink to="/">
-        <h1 className={styles.mainHeading}>SHOE TROVE</h1>
-        <h3 className={styles.subHeading}>FOOTWEAR</h3>
-      </NavLink>
+    <div className={styles.logoButtonsContainer}>
+      <div className={styles.logoContainer}>
+        <NavLink to="/">
+          <h1 className={styles.mainHeading}>SHOE TROVE</h1>
+          <h3 className={styles.subHeading}>FOOTWEAR</h3>
+        </NavLink>
+      </div>
+
+      <div className={styles.buttonsContainer}>
+        <SearchOffCanvas />
+      </div>
     </div>
   );
 }
@@ -38,7 +45,7 @@ function NavBar() {
 export default function Header() {
   return (
     <header>
-      <Logo />
+      <LogoAndButtons />
       <NavBar />
     </header>
   );

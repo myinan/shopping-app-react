@@ -1,0 +1,17 @@
+.searchForm {
+  display: flex;
+  gap: 20px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.searchButton {
+  padding: 0 20px;
+}
+
+.searchResults {
+  margin-top: 15px;
+}
