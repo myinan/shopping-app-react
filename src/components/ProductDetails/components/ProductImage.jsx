@@ -1,5 +1,5 @@
 import styles from "../ProductDetails.module.css";
-import ImgNotAvailable from "../assets/image-not-available.png";
+import ImgNotAvailable from "../../../assets/image-not-available.png";
 import ProductDetailContext from "../contexts/ProductDetailContext";
 import { useContext } from "react";
 
