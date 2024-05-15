@@ -26,12 +26,25 @@ function ProductInfoTop() {
 }
 
 function ProductInfoMiddle() {
-  const { sortedVariantsArr, handleVariantSelect } =
+  const { curElement, sortedVariantsArr, handleVariantSelect } =
     useContext(ProductDetailContext);
 
   return (
     <div className={styles.productDetailDescription}>
-      <p>Product Details here...</p>
+      <p>
+        {curElement.description
+          ? (() => {
+              let firstSentence = curElement.description
+                .split(/(?<=\.|\?|!)\s(?=[A-Z][a-z])/)
+                .find(
+                  (sentence) => sentence.length >= 50 && sentence.length <= 165
+                );
+              return firstSentence
+                ? firstSentence
+                : curElement.description.slice(0, 165) + "...";
+            })()
+          : ""}
+      </p>
 
       <div className={styles.selectContainer}>
         <div className={styles.sizeAndQuantityContainer}>
@@ -50,7 +63,7 @@ function ProductInfoMiddle() {
 
           <div className={styles.quantityInput}>
             <label>Quantity:</label>
-            <input type="number" max={14} min={1}></input>
+            <input type="number" max={14} min={1} defaultValue={1}></input>
           </div>
         </div>
 
