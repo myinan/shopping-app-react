@@ -4,6 +4,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import ProductDataContext from "../../../contexts/ProductDataContext";
+import ImgNotAvailable from "../../../assets/image-not-available.png";
 
 function SearchItem({ product }) {
   const address = `/collection/${product.id}`;
@@ -11,7 +12,12 @@ function SearchItem({ product }) {
   return (
     <Link to={address} className={styles.itemLink}>
       <div className={styles.itemImageContainer}>
-        <img src={product.image} alt={product.brand} />
+        {product.image &&
+        product.id !== "e87c0e9f-e3d3-4f3b-b0df-a165682bee4c" ? (
+          <img src={product.image} alt={product.title} />
+        ) : (
+          <img src={ImgNotAvailable} alt={product.title} />
+        )}
       </div>
       <div className={styles.itemInfoContainer}>
         <p>{product.title}</p>
@@ -48,7 +54,11 @@ function SearchOffCanvas() {
   const { productsData: featuredArr } = featuredData;
   const productsArr = [...bootsArr, ...sportsArr, ...featuredArr];
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setSearchQuery("");
+    setSearchResults([]);
+  };
   const handleShow = () => setShow(true);
 
   const handleSearchChange = (event) => {
