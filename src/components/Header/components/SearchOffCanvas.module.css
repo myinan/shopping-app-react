@@ -19,6 +19,51 @@
   padding: 0 20px;
 }
 
+/*  */
+
 .searchResults {
   margin-top: 15px;
+}
+
+.itemLink {
+  display: flex;
+  gap: 1rem;
+  height: fit-content;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid gray;
+}
+
+.itemLink:hover {
+  text-decoration: underline;
+}
+
+.itemImageContainer {
+  height: 100%;
+  width: 30%;
+}
+
+.itemImageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.itemInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: black;
+}
+
+.itemInfoContainer p {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.itemInfoContainer p:nth-child(2)::after {
+  content: "$";
 }

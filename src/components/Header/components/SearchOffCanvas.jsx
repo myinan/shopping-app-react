@@ -1,11 +1,26 @@
 import styles from "./SearchOffCanvas.module.css";
 import PropTypes from "prop-types";
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import ProductDataContext from "../../../contexts/ProductDataContext";
 
 function SearchItem({ product }) {
-  return <p>{product.title}</p>;
+  const address = `/collection/${product.id}`;
+
+  return (
+    <Link to={address} className={styles.itemLink}>
+      <div className={styles.itemImageContainer}>
+        <img src={product.image} alt={product.brand} />
+      </div>
+      <div className={styles.itemInfoContainer}>
+        <p>{product.title}</p>
+        <p>
+          {product.variants.slice().sort((a, b) => a.size - b.size)[0].price}
+        </p>
+      </div>
+    </Link>
+  );
 }
 
 SearchItem.propTypes = {
@@ -69,8 +84,9 @@ function SearchOffCanvas() {
         show={show}
         onHide={handleClose}
         placement="end"
-        scroll={true}
+        scroll={false}
         backdrop={true}
+        style={{ width: "600px" }}
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Search Collection</Offcanvas.Title>
