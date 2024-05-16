@@ -1,6 +1,7 @@
 import styles from "./ProductInfo.module.css";
 import ProductDetailContext from "../../contexts/ProductDetailContext";
 import { useContext } from "react";
+import useCart from "./updateCart";
 
 function ProductInfoTop() {
   const { curElement, selectedVariant } = useContext(ProductDetailContext);
@@ -78,9 +79,18 @@ function ProductInfoMiddle() {
 }
 
 function ProductInfoBottom() {
+  const updateCart = useCart();
+
   return (
     <div className={styles.productButtonsContainer}>
-      <button type="button">ADD TO CART</button>
+      <button
+        type="button"
+        onClick={() => {
+          updateCart();
+        }}
+      >
+        ADD TO CART
+      </button>
     </div>
   );
 }
