@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import ProductDataContext from "../../../contexts/ProductDataContext";
-import ImgNotAvailable from "../../../assets/image-not-available.png";
+import ProductDataContext from "../../../../contexts/ProductDataContext";
+import ImgNotAvailable from "../../../../assets/image-not-available.png";
 
 function SearchItem({ product }) {
   const address = `/collection/${product.id}`;

@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 import { NavLink } from "react-router-dom";
-import SearchOffCanvas from "./components/SearchOffCanvas";
+import SearchOffCanvas from "./components/SearchOffCanvas/SearchOffCanvas";
 
 function LogoAndButtons() {
   return (
