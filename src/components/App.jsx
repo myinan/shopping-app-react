@@ -5,8 +5,9 @@ import CollectionPage from "../pages/Collection/Collection";
 import SportsPage from "../pages/Sports/Sports";
 import BootsPage from "../pages/Boots/Boots";
 import AboutUsPage from "../pages/AboutUs/AboutUs";
-import Error from "./Error/Error";
 import ProductDetailsPage from "./ProductDetails/ProductDetails";
+import CartPage from "../pages/Cart/Cart";
+import Error from "./Error/Error";
 
 function App() {
   const router = createBrowserRouter([
@@ -37,6 +38,11 @@ function App() {
         {
           path: "about",
           element: <AboutUsPage />,
+        },
+
+        {
+          path: "cart",
+          element: <CartPage />,
         },
 
         {
