@@ -50,7 +50,11 @@ function ProductInfoMiddle() {
         <div className={styles.sizeAndQuantityContainer}>
           <div className={styles.sizeSelectMenu}>
             <label htmlFor="shoe-size">Size:</label>
-            <select name="sizes" id="shoe-size" onChange={handleVariantSelect}>
+            <select
+              name="sizes"
+              id="shoe-size"
+              onChange={(e) => handleVariantSelect(e)}
+            >
               {sortedVariantsArr.map((variant, index) => {
                 return (
                   <option key={index} value={JSON.stringify(variant)}>

@@ -31,6 +31,7 @@ SearchItem.propTypes = {
     title: PropTypes.string.isRequired,
     gender: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    variants: PropTypes.shape([]).isRequired,
   }).isRequired,
 };
 
