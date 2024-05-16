@@ -1,7 +1,8 @@
 import styles from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import SearchOffCanvas from "./components/SearchOffCanvas/SearchOffCanvas";
-import Cart from "./components/Cart/Cart";
+import CartButton from "./components/CartButton";
+import NavBar from "./components/Navbar";
 
 function LogoAndButtons() {
   return (
@@ -15,31 +16,8 @@ function LogoAndButtons() {
 
       <div className={styles.buttonsContainer}>
         <SearchOffCanvas />
-        <Cart />
+        <CartButton />
       </div>
-    </div>
-  );
-}
-
-function NavBar() {
-  function isActive({ isActive }) {
-    return isActive ? styles.activeNavLink : "";
-  }
-
-  return (
-    <div className={styles.navLinksContainer}>
-      <NavLink to="/collection" className={isActive}>
-        COLLECTION
-      </NavLink>
-      <NavLink to="/sports" className={isActive}>
-        SPORTS
-      </NavLink>
-      <NavLink to="/boots" className={isActive}>
-        BOOTS
-      </NavLink>
-      <NavLink to="/about" className={isActive}>
-        ABOUT US
-      </NavLink>
     </div>
   );
 }
