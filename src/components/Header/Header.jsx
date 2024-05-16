@@ -1,6 +1,7 @@
 import styles from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import SearchOffCanvas from "./components/SearchOffCanvas/SearchOffCanvas";
+import Cart from "./components/Cart/Cart";
 
 function LogoAndButtons() {
   return (
@@ -14,6 +15,7 @@ function LogoAndButtons() {
 
       <div className={styles.buttonsContainer}>
         <SearchOffCanvas />
+        <Cart />
       </div>
     </div>
   );

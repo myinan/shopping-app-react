@@ -3,13 +3,17 @@
 }
 
 .buttonsContainer {
+  display: flex;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
   width: 10%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
   padding: 1rem;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 .logoContainer {
