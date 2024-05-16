@@ -3,10 +3,13 @@
 }
 
 .buttonsContainer {
+  width: 10%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
+  padding: 1rem;
+  margin-right: 1rem;
 }
 
 .logoContainer {
