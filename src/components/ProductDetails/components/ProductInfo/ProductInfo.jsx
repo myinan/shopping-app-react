@@ -78,7 +78,7 @@ function ProductInfoMiddle() {
               max={14}
               min={1}
               value={selectedQuantity}
-              onChange={(e) => setSelectedQuantity(e.target.value)}
+              onChange={(e) => setSelectedQuantity(Number(e.target.value))}
             ></input>
           </div>
         </div>
