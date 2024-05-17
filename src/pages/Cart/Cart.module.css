@@ -62,9 +62,35 @@
   border: 2px solid orange;
 }
 
+.cartItemQuantityContainer {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.cartItemQuantityContainer button {
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
+  padding: 0.1rem 0.3rem;
+}
+
 .removeBtnContainer {
   width: fit-content;
   justify-self: end;
+}
+
+.removeBtnContainer button {
+  border: none;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  padding: 0.5rem 1rem;
+  text-decoration: underline;
+}
+
+.removeBtnContainer button:hover {
+  color: antiquewhite;
+  background-color: sienna;
 }
 
 /*  */

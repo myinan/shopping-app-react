@@ -5,13 +5,52 @@ import PropTypes from "prop-types";
 import CartContext from "../../contexts/CartContext";
 
 function CartItem({ item }) {
-  const total = Number(item.price) * Number(item.quantity);
+  const [, setCart] = useContext(CartContext);
+  const total = item.price * item.quantity;
+
+  function decreaseQuantity() {
+    setCart((prevCart) =>
+      prevCart.map((cartItem) => {
+        if (
+          cartItem.id === item.id &&
+          cartItem.size === item.size &&
+          cartItem.quantity > 0
+        ) {
+          return { ...cartItem, quantity: cartItem.quantity - 1 };
+        }
+        return cartItem;
+      })
+    );
+  }
+
+  function increaseQuantity() {
+    setCart((prevCart) =>
+      prevCart.map((cartItem) => {
+        if (
+          cartItem.id === item.id &&
+          cartItem.size === item.size &&
+          cartItem.quantity < 15
+        ) {
+          return { ...cartItem, quantity: cartItem.quantity + 1 };
+        }
+        return cartItem;
+      })
+    );
+  }
+
+  function removeItem() {
+    setCart((prevCart) =>
+      prevCart.filter(
+        (cartItem) => !(cartItem.id === item.id && cartItem.size === item.size)
+      )
+    );
+  }
 
   return (
     <tr>
       <td className={styles.cartItemCell}>
         <div className={styles.cartItemMain}>
-          <Link>
+          <Link to={`/collection/${item.id}`}>
             <img src={item.image} alt={item.title} />
           </Link>
           <p>{item.title}</p>
@@ -23,14 +62,30 @@ function CartItem({ item }) {
       <td>
         <p>{`${item.price}$`}</p>
       </td>
-      <td>
+      <td className={styles.cartItemQuantityContainer}>
+        <button
+          type="button"
+          onClick={decreaseQuantity}
+          disabled={item.quantity < 2}
+        >
+          -
+        </button>
         <p>{item.quantity}</p>
+        <button
+          type="button"
+          onClick={increaseQuantity}
+          disabled={item.quantity > 13}
+        >
+          +
+        </button>
       </td>
       <td>
         <p>{`${total}$`}</p>
       </td>
       <td className={styles.removeBtnContainer}>
-        <button type="buton">REMOVE</button>
+        <button type="buton" onClick={removeItem}>
+          REMOVE
+        </button>
       </td>
     </tr>
   );
