@@ -27,8 +27,13 @@ function ProductInfoTop() {
 }
 
 function ProductInfoMiddle() {
-  const { curElement, sortedVariantsArr, handleVariantSelect } =
-    useContext(ProductDetailContext);
+  const {
+    curElement,
+    sortedVariantsArr,
+    handleVariantSelect,
+    selectedQuantity,
+    setSelectedQuantity,
+  } = useContext(ProductDetailContext);
 
   return (
     <div className={styles.productDetailDescription}>
@@ -68,7 +73,13 @@ function ProductInfoMiddle() {
 
           <div className={styles.quantityInput}>
             <label>Quantity:</label>
-            <input type="number" max={14} min={1} defaultValue={1}></input>
+            <input
+              type="number"
+              max={14}
+              min={1}
+              value={selectedQuantity}
+              onChange={(e) => setSelectedQuantity(e.target.value)}
+            ></input>
           </div>
         </div>
 
