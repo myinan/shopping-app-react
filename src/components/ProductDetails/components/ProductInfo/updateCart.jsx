@@ -6,7 +6,9 @@ export default function useCart() {
   const [cart, setCart] = useContext(CartContext);
   const { curElement, selectedVariant, selectedQuantity } =
     useContext(ProductDetailContext);
-  const productInfo = {
+
+  const product = {
+    id: curElement.id,
     title: curElement.title.split(" ").slice(0, 4).join(" "),
     image: curElement.image,
     price: selectedVariant.price,
@@ -14,5 +16,12 @@ export default function useCart() {
     quantity: selectedQuantity,
   };
 
-  return () => setCart([...cart, productInfo]);
+  return () => {
+    const isProductInCart = cart.some((item) => item.id === product.id);
+
+    if (!isProductInCart) {
+      setCart([...cart, product]);
+    }
+    return isProductInCart;
+  };
 }
