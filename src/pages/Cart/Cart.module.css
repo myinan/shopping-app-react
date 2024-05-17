@@ -6,3 +6,76 @@
   gap: 2rem;
   min-height: 650px;
 }
+
+.cartTitle {
+  font-size: 2rem;
+}
+
+.cartForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.cartForm p {
+  margin: 0;
+  padding: 0;
+}
+
+.cartTable {
+  width: min(90%, 1200px);
+}
+
+.cartTable tr {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid black;
+}
+
+.cartTable tbody tr {
+  padding: 1rem 0;
+}
+
+/*  */
+
+.cartItemMain {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+}
+
+.cartItemMain img {
+  height: 100px;
+  min-width: 100px;
+  width: 100%;
+  object-fit: cover;
+  border: 5px solid gray;
+  padding: 0.1rem;
+}
+
+.cartItemMain img:hover {
+  border: 2px solid orange;
+}
+
+.removeBtnContainer {
+  width: fit-content;
+  justify-self: end;
+}
+
+/*  */
+
+.cartCheckout {
+  width: min(90%, 1200px);
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.cartCheckout button {
+  width: min-content;
+}

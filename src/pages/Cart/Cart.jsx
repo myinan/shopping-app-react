@@ -8,18 +8,29 @@ function CartItem({ item }) {
   const total = Number(item.price) * Number(item.quantity);
 
   return (
-    <tr className={styles.cartItemRow}>
+    <tr>
       <td className={styles.cartItemCell}>
-        <p>{item.title}</p>
+        <div className={styles.cartItemMain}>
+          <Link>
+            <img src={item.image} alt={item.title} />
+          </Link>
+          <p>{item.title}</p>
+        </div>
       </td>
-      <td className={styles.cartItemCell}>
+      <td>
+        <p>{item.size}</p>
+      </td>
+      <td>
         <p>{`${item.price}$`}</p>
       </td>
-      <td className={styles.cartItemCell}>
+      <td>
         <p>{item.quantity}</p>
       </td>
-      <td className={styles.cartItemCell}>
+      <td>
         <p>{`${total}$`}</p>
+      </td>
+      <td className={styles.removeBtnContainer}>
+        <button type="buton">REMOVE</button>
       </td>
     </tr>
   );
@@ -31,7 +42,7 @@ CartItem.propTypes = {
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    size: PropTypes.number.isRequired,
+    size: PropTypes.string.isRequired,
     quantity: PropTypes.number.isRequired,
   }).isRequired,
 };
@@ -48,6 +59,7 @@ function FilledCartPage() {
           <thead>
             <tr>
               <th>Item</th>
+              <th>Size</th>
               <th>Price</th>
               <th>Quantity</th>
               <th>Total</th>
