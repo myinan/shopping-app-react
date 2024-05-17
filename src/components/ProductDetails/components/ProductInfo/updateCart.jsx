@@ -17,7 +17,9 @@ export default function useCart() {
   };
 
   return () => {
-    const isProductInCart = cart.some((item) => item.id === product.id);
+    const isProductInCart = cart.some(
+      (item) => item.id === product.id && item.size === product.size
+    );
 
     if (!isProductInCart) {
       setCart([...cart, product]);
