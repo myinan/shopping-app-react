@@ -1,6 +1,6 @@
 import styles from "./ProductInfo.module.css";
 import ProductDetailContext from "../../contexts/ProductDetailContext";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import useCart from "./updateCart";
 
 function ProductInfoTop() {
@@ -91,17 +91,19 @@ function ProductInfoMiddle() {
 
 function ProductInfoBottom() {
   const updateCart = useCart();
+  const [isAdded, setIsAdded] = useState(false);
 
   return (
     <div className={styles.productButtonsContainer}>
       <button
         type="button"
         onClick={() => {
-          updateCart();
+          setIsAdded(updateCart());
         }}
       >
         ADD TO CART
       </button>
+      {isAdded ? <p>*Product is already added to your cart.</p> : ""}
     </div>
   );
 }
