@@ -1,5 +1,5 @@
 import styles from "./Cart.module.css";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartContext from "../../contexts/CartContext";
@@ -190,6 +190,14 @@ EmptyCartPage.propTypes = {
 export default function CartPage() {
   const [cart] = useContext(CartContext);
   const [showAlert, setShowAlert] = useState(false);
+
+  useEffect(() => {
+    if (showAlert) {
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 2500);
+    }
+  }, [showAlert, setShowAlert]);
 
   return cart.length !== 0 ? (
     <FilledCartPage setShowAlert={setShowAlert} />
