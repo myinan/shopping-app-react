@@ -2,26 +2,27 @@
   composes: flexCenter from "../../assets/global.css";
   gap: 2rem;
   padding: 2rem;
-  background-color: #155e75;
+  color: var(--text-light);
+  background-color: var(--accent);
+}
+
+.topFooter * {
+  margin: 0;
+  padding: 0;
+}
+
+.topFooter > h3 {
+  font-size: 2rem;
 }
 
 /*  */
 
-.topFooter > h3 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #e2e8f0;
-}
-
-.topFooter > p {
-  color: #e2e8f0;
-}
-
 .mainFooter {
+  color: var(--text-dark);
+  background-color: var(--primary);
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
   gap: 2rem;
-  background-color: #7dd3fc;
   padding: 2rem 0rem;
 }
 
@@ -55,10 +56,10 @@
   gap: 1.5rem;
 }
 
+/*  */
+
 .bottomFooter {
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
-  background-color: #155e75;
-  color: #e2e8f0;
   padding: 1rem;
 }
