@@ -1,5 +1,5 @@
 import styles from "./Cart.module.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartContext from "../../contexts/CartContext";
@@ -103,7 +103,19 @@ CartItem.propTypes = {
 };
 
 function FilledCartPage() {
-  const [cart] = useContext(CartContext);
+  const [cart, setCart] = useContext(CartContext);
+  const [pending, setPending] = useState(false);
+
+  function checkout(event) {
+    event.preventDefault();
+    setPending((prevVal) => !prevVal);
+
+    setTimeout(() => {
+      setCart([]);
+      setPending((prevVal) => !prevVal);
+      alert("Purchase successful.");
+    }, 2000);
+  }
 
   return (
     <div className={styles.cartPage}>
@@ -121,16 +133,25 @@ function FilledCartPage() {
             </tr>
           </thead>
           <tbody>
-            {cart.map((item) => {
-              return <CartItem item={item} key={item.id} />;
+            {cart.map((item, index) => {
+              return <CartItem item={item} key={`${index}${item.id}`} />;
             })}
           </tbody>
         </table>
 
         <div className={styles.cartCheckout}>
-          <div className={styles.cartTotalPrice}>Total Price here...</div>
-          <button type="submit">CHECKOUT</button>
-          <Link to="/collection">Keep Shopping</Link>
+          <p className={styles.cartTotalPrice}>Total Price here...</p>
+          <button
+            type="submit"
+            onClick={(e) => checkout(e)}
+            disabled={pending}
+            className={styles.checkoutBtn}
+          >
+            {pending ? "PENDING..." : "CHECKOUT"}
+          </button>
+          <Link to="/collection" className={styles.keepShoppingLink}>
+            Keep Shopping
+          </Link>
         </div>
       </form>
     </div>
@@ -141,7 +162,7 @@ function EmptyCartPage() {
   return (
     <div className={styles.cartPage}>
       <h2>YOUR CART IS LOOKING EMPTY.</h2>
-      <Link to="/">SHOP NOW</Link>
+      <Link to="/collection">SHOP NOW</Link>
     </div>
   );
 }
