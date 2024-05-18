@@ -2,19 +2,7 @@
   position: relative;
 }
 
-.buttonsContainer {
-  display: flex;
-  gap: 1.6rem;
-  justify-content: center;
-  align-items: center;
-  width: 10%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  padding: 1rem;
-  margin-right: 1.5rem;
-}
+/*  */
 
 .logoContainer {
   composes: flexCenter from "../../assets/global.css";
@@ -48,6 +36,43 @@
 .subHeading {
   font-size: 1.5rem;
 }
+
+/*  */
+
+.buttonsContainer {
+  display: flex;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  padding: 1rem;
+  margin-right: 1.5rem;
+}
+
+.cartBtnContainer {
+  position: relative;
+}
+
+.cartSizeDisplay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  top: 60%;
+  right: -5%;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+}
+
+/*  */
 
 .navLinksContainer {
   composes: flexCenter from "../../assets/global.css";
