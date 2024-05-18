@@ -1,6 +1,11 @@
 .headerSearchButton {
   border: none;
   background-color: transparent;
+  transition: transform 0.1s linear;
+}
+
+.headerSearchButton:hover {
+  transform: scale(1.1);
 }
 
 /*  */

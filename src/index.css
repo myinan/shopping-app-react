@@ -8,6 +8,14 @@
   src: url("./assets/fonts/OpenSans-Medium.ttf") format("truetype");
 }
 
+:root {
+  --main-bg: #ffffff;
+  --primary: #ffc038;
+  --accent: #090909;
+  --text-dark: #090909;
+  --text-light: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +26,8 @@
   max-width: 2000px;
   margin: auto;
   font-family: "OpenSansText", sans-serif;
+  background-color: var(--main-bg);
+  color: var(--text-dark);
 }
 
 h1,
