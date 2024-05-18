@@ -118,6 +118,11 @@ function FilledCartPage({ setShowAlert }) {
     }, 2000);
   }
 
+  const totalPrice = cart.reduce((accumulator, item) => {
+    const subtotal = item.quantity * item.price;
+    return accumulator + subtotal;
+  }, 0);
+
   return (
     <div className={styles.cartPage}>
       <h1 className={styles.cartTitle}>YOUR CART</h1>
@@ -130,7 +135,7 @@ function FilledCartPage({ setShowAlert }) {
               <th>Size</th>
               <th>Price</th>
               <th>Quantity</th>
-              <th>Total</th>
+              <th>Subtotal</th>
             </tr>
           </thead>
           <tbody>
@@ -141,7 +146,11 @@ function FilledCartPage({ setShowAlert }) {
         </table>
 
         <div className={styles.cartCheckout}>
-          <p className={styles.cartTotalPrice}>Total Price here...</p>
+          <div className={styles.cartTotalPriceContainer}>
+            <p>TOTAL</p>
+            <p>{`${totalPrice}$`}</p>
+          </div>
+
           <button
             type="submit"
             onClick={(e) => checkout(e)}
