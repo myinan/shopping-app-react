@@ -1,6 +1,7 @@
 .topFooter {
+  height: 140px;
   composes: flexCenter from "../../assets/global.css";
-  gap: 2rem;
+  gap: 2.3rem;
   padding: 2rem;
   color: var(--text-light);
   background-color: var(--accent);
@@ -13,6 +14,47 @@
 
 .topFooter > h3 {
   font-size: 2rem;
+}
+
+.topFooterForm {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topFooterForm input {
+  background-color: var(--text-dark);
+  color: var(--text-light);
+  border: 1px solid var(--primary);
+  height: 100%;
+  width: clamp(250px, 250px + 3vw, 400px);
+  padding: 0rem 0.5rem;
+}
+
+.topFooterForm input:focus {
+  outline: none;
+  border: 1px solid var(--text-light);
+}
+
+.topFooterForm input::placeholder {
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.topFooterForm button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: var(--primary);
+  color: var(--text-dark);
+  padding: 0 1rem;
+  border: 1px solid var(--primary);
+  font-weight: 600;
+}
+
+.topFooterForm button:hover {
+  background-color: var(--text-light);
 }
 
 /*  */
@@ -59,6 +101,8 @@
 /*  */
 
 .bottomFooter {
+  color: var(--text-light);
+  background-color: var(--accent);
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
   padding: 1rem;

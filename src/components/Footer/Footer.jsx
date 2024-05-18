@@ -6,9 +6,9 @@ function FooterTop() {
     <div className={styles.topFooter}>
       <h3>Subscribe to our weekly newsletter.</h3>
       <p>Enjoy 10% off your first purchase when you sign up!</p>
-      <form>
+      <form className={styles.topFooterForm}>
         <input type="mail" placeholder="Enter your email here." />
-        <label>Subscribe</label>
+        <button type="submit">SUBSCRIBE</button>
       </form>
     </div>
   );
