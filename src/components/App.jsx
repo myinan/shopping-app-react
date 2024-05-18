@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "../index.css";
 import Layout from "../layout/Layout";
 import HomePage from "../pages/Home/Home";
 import CollectionPage from "../pages/Collection/Collection";
@@ -59,7 +60,11 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <div className="app">
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;

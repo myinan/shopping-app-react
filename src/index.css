@@ -1,10 +1,30 @@
+@font-face {
+  font-family: "MontserratHeading";
+  src: url("./assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSansText";
+  src: url("./assets/fonts/OpenSans-Medium.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#root {
+.app {
   max-width: 2000px;
   margin: auto;
+  font-family: "OpenSansText", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "MontserratHeading", sans-serif;
 }
