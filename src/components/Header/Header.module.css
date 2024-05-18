@@ -53,6 +53,7 @@
 
 .cartBtnContainer {
   position: relative;
+  transform: scale(1);
   transition: transform 0.1s linear;
 }
 
@@ -61,6 +62,8 @@
 }
 
 .cartSizeDisplay {
+  background-color: var(--accent);
+  color: var(--text-light);
   position: absolute;
   display: flex;
   justify-content: center;
