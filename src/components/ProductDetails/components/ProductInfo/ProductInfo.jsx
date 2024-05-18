@@ -1,7 +1,7 @@
 import styles from "./ProductInfo.module.css";
 import ProductDetailContext from "../../contexts/ProductDetailContext";
 import { useState, useContext } from "react";
-import useCart from "./updateCart";
+import useCart from "./useCart";
 
 function ProductInfoTop() {
   const { curElement, selectedVariant } = useContext(ProductDetailContext);
@@ -92,18 +92,28 @@ function ProductInfoMiddle() {
 function ProductInfoBottom() {
   const updateCart = useCart();
   const [isAdded, setIsAdded] = useState(false);
+  const [isAllowed, setIsAllowed] = useState(true);
 
   return (
     <div className={styles.productButtonsContainer}>
       <button
         type="button"
         onClick={() => {
-          setIsAdded(updateCart());
+          const { isProductInCart, isQuantityAllowed } = updateCart();
+          setIsAdded(isProductInCart);
+          setIsAllowed(isQuantityAllowed);
         }}
       >
         ADD TO CART
       </button>
       {isAdded ? <p>*Product is already added to your cart.</p> : ""}
+      {!isAdded && !isAllowed ? (
+        <p>
+          Please contact our customer service to purchase more than 14 shoes.
+        </p>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

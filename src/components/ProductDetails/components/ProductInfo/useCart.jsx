@@ -21,9 +21,11 @@ export default function useCart() {
       (item) => item.id === product.id && item.size === product.size
     );
 
-    if (!isProductInCart) {
+    const isQuantityAllowed = selectedQuantity < 15 && selectedQuantity > 0;
+
+    if (!isProductInCart && isQuantityAllowed) {
       setCart([...cart, product]);
     }
-    return isProductInCart;
+    return { isProductInCart, isQuantityAllowed };
   };
 }
