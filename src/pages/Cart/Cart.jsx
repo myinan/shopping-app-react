@@ -139,8 +139,8 @@ function FilledCartPage({ setShowAlert }) {
             </tr>
           </thead>
           <tbody>
-            {cart.map((item, index) => {
-              return <CartItem item={item} key={`${index}${item.id}`} />;
+            {cart.map((item) => {
+              return <CartItem item={item} key={`${item.size}${item.id}`} />;
             })}
           </tbody>
         </table>
