@@ -1,4 +1,5 @@
 .cartPage {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,4 +129,14 @@
 
 .keepShoppingLink {
   color: black;
+}
+
+/*  */
+
+.alertComponent {
+  position: absolute;
+  width: min(400px, 40%);
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

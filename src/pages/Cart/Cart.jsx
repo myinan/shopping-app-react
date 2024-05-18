@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartContext from "../../contexts/CartContext";
+import Alert from "react-bootstrap/Alert";
 
 function CartItem({ item }) {
   const [, setCart] = useContext(CartContext);
@@ -102,7 +103,7 @@ CartItem.propTypes = {
   }).isRequired,
 };
 
-function FilledCartPage() {
+function FilledCartPage({ setShowAlert }) {
   const [cart, setCart] = useContext(CartContext);
   const [pending, setPending] = useState(false);
 
@@ -111,9 +112,9 @@ function FilledCartPage() {
     setPending((prevVal) => !prevVal);
 
     setTimeout(() => {
-      setCart([]);
       setPending((prevVal) => !prevVal);
-      alert("Purchase successful.");
+      setShowAlert(true);
+      setCart([]);
     }, 2000);
   }
 
@@ -158,17 +159,41 @@ function FilledCartPage() {
   );
 }
 
-function EmptyCartPage() {
+FilledCartPage.propTypes = {
+  setShowAlert: PropTypes.func.isRequired,
+};
+
+function EmptyCartPage({ showAlert, setShowAlert }) {
   return (
     <div className={styles.cartPage}>
+      <Alert
+        variant={"success"}
+        dismissible
+        className={styles.alertComponent}
+        show={showAlert}
+        onClose={() => setShowAlert(false)}
+      >
+        Purchase successful.
+      </Alert>
+
       <h2>YOUR CART IS LOOKING EMPTY.</h2>
       <Link to="/collection">SHOP NOW</Link>
     </div>
   );
 }
 
+EmptyCartPage.propTypes = {
+  showAlert: PropTypes.bool.isRequired,
+  setShowAlert: PropTypes.func.isRequired,
+};
+
 export default function CartPage() {
   const [cart] = useContext(CartContext);
+  const [showAlert, setShowAlert] = useState(false);
 
-  return cart.length !== 0 ? <FilledCartPage /> : <EmptyCartPage />;
+  return cart.length !== 0 ? (
+    <FilledCartPage setShowAlert={setShowAlert} />
+  ) : (
+    <EmptyCartPage showAlert={showAlert} setShowAlert={setShowAlert} />
+  );
 }
