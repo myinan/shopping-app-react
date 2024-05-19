@@ -21,6 +21,7 @@
 
 .logoContainer a > * {
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 .logoContainer a:hover {
