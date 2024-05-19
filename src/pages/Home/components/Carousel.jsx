@@ -1,14 +1,14 @@
 import styles from "../Home.module.css";
 import Carousel from "react-bootstrap/Carousel";
-import shoeBlack from "../assets/carousel-images/shoe-black.jpg";
-import shoesTriple from "../assets/carousel-images/shoes-triple.jpg";
-import shoesWalking from "../assets/carousel-images/shoes-walking.jpg";
+import boots from "../assets/carousel-images/boots.jpg";
+import nikes from "../assets/carousel-images/nikes.jpg";
+import nikes2 from "../assets/carousel-images/nikes2.jpg";
 
 export default function HomeCarousel() {
   return (
     <Carousel fade>
       <Carousel.Item>
-        <img src={shoeBlack} alt="Black shoe" className={styles.carouselImg} />
+        <img src={nikes} alt="Nike shoes" className={styles.carouselImg} />
         <Carousel.Caption>
           <h3>Versatile Styles</h3>
           <p>
@@ -19,11 +19,7 @@ export default function HomeCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          src={shoesTriple}
-          alt="Three shoes, side by side"
-          className={styles.carouselImg}
-        />
+        <img src={nikes2} alt="Nike shoes" className={styles.carouselImg} />
         <Carousel.Caption>
           <h3>Comfort Redefined</h3>
           <p>
@@ -34,17 +30,14 @@ export default function HomeCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          src={shoesWalking}
-          alt="People walking, focused on shoes"
-          className={styles.carouselImg}
-        />
+        <img src={boots} alt="Boots" className={styles.carouselImg} />
         <Carousel.Caption>
-          <h3>Understated Elegance</h3>
+          <h3>Rugged Durability</h3>
           <p>
-            Discover the allure of understated elegance with our curated
-            selection of shoes. From minimalist designs to subtle detailing,
-            these shoes exude sophistication with every step.
+            Embrace the strength and resilience of our sturdy boots collection.
+            Built to withstand the toughest conditions, these boots offer
+            unwavering support and durability. Perfect for any adventure, they
+            combine rugged style with practical functionality.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
