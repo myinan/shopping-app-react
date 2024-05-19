@@ -16,13 +16,18 @@ export default function ShopNow() {
           you&apos;re looking for iconic classics or the latest trendsetters,
           our collection has something for everyone.
         </p>
-        <Link>Browse Shoe Trove</Link>
-        <img src={footwearVertical} className={styles.shopNowLeftImg}></img>
+        <Link to="/boots">BROWSE BOOTS</Link>
+        <div className={styles.shopNowImgWrapper}>
+          <img src={footwearVertical} className={styles.shopNowImg}></img>
+        </div>
       </div>
 
       <div className={styles.rightSide}>
-        <img src={shoesPair} className={styles.shopNowRightImg}></img>
-        <Link>See all products</Link>
+        <div className={styles.shopNowImgWrapper}>
+          <img src={shoesPair} className={styles.shopNowImg}></img>
+        </div>
+
+        <Link to="/collection">SEE THE COLLECTION</Link>
       </div>
     </div>
   );
