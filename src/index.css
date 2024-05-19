@@ -16,6 +16,7 @@
 :root {
   --main-bg: #ffffff;
   --primary: #ffc038;
+  --primary-darker: #c8651b;
   --accent: #090909;
   --accent-lighter: #272525;
   --text-dark: #090909;
@@ -34,7 +35,7 @@
   margin: auto;
   font-family: "OpenSansText", sans-serif;
   background-color: var(--main-bg);
-  color: var(--text-dark);
+  color: var(--text-gray);
   cursor: default;
 }
 
