@@ -106,6 +106,7 @@
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
   padding-left: 4rem;
+  gap: 1.5rem;
 }
 
 .contactInfoContainer {
@@ -113,17 +114,73 @@
   gap: 3rem;
 }
 
+.contactInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  letter-spacing: 1px;
+}
+
 .mainFooterBottomSection {
   composes: flexCenter from "../../assets/global.css";
   gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.mainFooterBottomSection a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.mainFooterBottomSection p {
+  margin: 0;
+  padding: 0;
 }
 
 /*  */
 
 .bottomFooter {
   color: var(--text-light);
-  background-color: var(--accent);
+  background-color: var(--accent-lighter);
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
-  padding: 1rem;
+  gap: 0.3rem;
+  padding: 0.5rem;
+}
+
+.bottomFooter * {
+  padding: 0;
+  margin: 0;
+}
+
+.bottomFooter a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  gap: 0.5rem;
+  letter-spacing: 0.6px;
+}
+
+.bottomFooter a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.bottomFooter a:hover svg g {
+  fill: #4078c0;
+}
+
+.bottomFooter p {
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
 }

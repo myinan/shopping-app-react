@@ -17,6 +17,7 @@
   --main-bg: #ffffff;
   --primary: #ffc038;
   --accent: #090909;
+  --accent-lighter: #272525;
   --text-dark: #090909;
   --text-gray: #423c3a;
   --text-light: #ffffff;
@@ -34,6 +35,7 @@
   font-family: "OpenSansText", sans-serif;
   background-color: var(--main-bg);
   color: var(--text-dark);
+  cursor: default;
 }
 
 h1,
@@ -43,4 +45,5 @@ h4,
 h5,
 h6 {
   font-family: "MontserratHeading", sans-serif;
+  cursor: default;
 }
