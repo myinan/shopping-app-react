@@ -60,32 +60,52 @@
 /*  */
 
 .mainFooter {
-  color: var(--text-dark);
+  color: var(--text-gray);
   background-color: var(--primary);
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 0rem;
+}
+
+.mainFooter a {
+  color: var(--text-gray);
+  text-decoration: none;
+}
+
+.mainFooter a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .mainFooterTopSection {
   composes: flexCenter from "../../assets/global.css";
-  gap: 2rem;
+  padding: 3rem 0;
 }
 
 .linksSectionContainer {
   composes: flexCenter from "../../assets/global.css";
   gap: 3rem;
+  padding-right: 4rem;
+  border-right: 1px solid black;
 }
 
 .linksBlock {
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
+  gap: 0.5rem;
+}
+
+.linksBlock a {
+  font-family: "OpenSansFooterLink";
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
 .contactSectionContainer {
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
+  padding-left: 4rem;
 }
 
 .contactInfoContainer {

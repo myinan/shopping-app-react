@@ -8,11 +8,17 @@
   src: url("./assets/fonts/OpenSans-Medium.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "OpenSansFooterLink";
+  src: url("./assets/fonts/OpenSans-Light.ttf") format("truetype");
+}
+
 :root {
   --main-bg: #ffffff;
   --primary: #ffc038;
   --accent: #090909;
   --text-dark: #090909;
+  --text-gray: #423c3a;
   --text-light: #ffffff;
 }
 
