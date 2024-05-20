@@ -6,7 +6,10 @@ import ProductDataContext from "../../contexts/ProductDataContext";
 /* import CartContext from "../../contexts/CartContext"; */
 
 const heading = "COLLECTION";
-const text = `...`;
+const text = `Discover the best of both worlds with our exclusive COLLECTION, 
+featuring an extensive range of sports footwear and boots. 
+Whether you're a sneakerhead seeking for the best sneakers out there, 
+or a style-savvy explorer in search of high-quality boots, our curated selection caters to all your needs. `;
 const imageAltText = "Collection Footwear";
 
 export default function CollectionPage() {
