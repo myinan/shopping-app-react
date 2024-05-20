@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import ProductDataContext from "../../../contexts/ProductDataContext";
-/* import CartContext from "../../../contexts/CartContext"; */
 
 import "../slick.css";
 import Slider from "react-slick";
@@ -17,7 +16,7 @@ function FeaturedProduct({ product }) {
       <div className={styles.featuredItem}>
         <img src={product.image} alt={product.title} />
         <div className={styles.featuredItemInfoContainer}>
-          <p>{product.brand}</p>
+          <p>{product.brand.toUpperCase()}</p>
           <div className={styles.titleAndPriceInfo}>
             <p>{product.title}</p>
             <p>{product.base_price}$</p>
@@ -93,7 +92,7 @@ export default function FeaturedProducts() {
 
   return (
     <div className={styles.featuredProductsContainer}>
-      <h3>New Arrivals</h3>
+      <h3>NEW ARRIVALS</h3>
       <FeaturedsCarousel products={productsData} />
     </div>
   );
