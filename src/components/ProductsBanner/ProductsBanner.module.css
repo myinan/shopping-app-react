@@ -10,16 +10,19 @@
   align-items: center;
   width: 40%;
   flex-grow: 1;
-  padding: 0rem 3rem;
+  padding: 1rem 3rem;
 }
 
 .bannerInfoContainer p {
   text-align: center;
 }
 
+/*  */
+
 .bannerImgWrapper {
   display: flex;
   max-height: 500px;
+  overflow: hidden;
 }
 
 .bannerImg {
@@ -27,4 +30,9 @@
   object-position: center;
   width: 100%;
   height: auto;
+  transition: transform 0.2s linear;
+}
+
+.bannerImgWrapper:hover .bannerImg {
+  transform: scale(1.05);
 }
