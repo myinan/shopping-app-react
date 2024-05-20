@@ -24,7 +24,7 @@ function FeaturedProduct({ product }) {
           <p>{product.brand.toUpperCase()}</p>
           <div className={styles.titleAndPriceInfo}>
             <p>{title}</p>
-            <p>{sortedVariantsArr[0].price}$</p>
+            <p className={styles.price}>{sortedVariantsArr[0].price}$</p>
           </div>
         </div>
       </div>

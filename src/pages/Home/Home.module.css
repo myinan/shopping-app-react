@@ -148,6 +148,7 @@
 .featuredItem {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
   height: 500px;
 }
@@ -186,4 +187,8 @@
   font-size: 1.3rem;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.price {
+  color: var(--primary-darker);
 }
