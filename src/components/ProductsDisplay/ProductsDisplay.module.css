@@ -9,6 +9,7 @@
 
 .sideBarAndProductsWrapper {
   display: flex;
+  gap: 3rem;
 }
 
 /*  */
@@ -30,7 +31,7 @@
   cursor: pointer;
 }
 
-.productCard a {
+.productCard {
   color: var(--text-dark);
 }
 
@@ -106,4 +107,15 @@
 
 .sideBarNavLinkWrapper {
   font: inherit;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+
+.sideBarNavLinkWrapper a {
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+.currentPage {
+  background-color: var(--primary);
 }

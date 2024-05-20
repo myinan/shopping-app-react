@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import styles from "./ProductsDisplay.module.css";
 import ImgNotAvailable from "../../assets/image-not-available.png";
@@ -56,17 +56,25 @@ function ProductsGrid({ productsData }) {
 }
 
 function SideBarNav() {
+  let { pathname } = useLocation();
+
   return (
     <nav className={styles.sideBarNav}>
       <ul className={styles.sideBarNavLinks}>
-        <li className={styles.sideBarNavLinkWrapper}>
-          <NavLink to="/collection">All Products</NavLink>
+        <li
+          className={`${styles.sideBarNavLinkWrapper} ${pathname === "/collection" ? styles.currentPage : ""}`}
+        >
+          <NavLink to="/collection">ALL PRODUCTS</NavLink>
         </li>
-        <li className={styles.sideBarNavLinkWrapper}>
-          <NavLink to="/sports">Sports Footwear</NavLink>
+        <li
+          className={`${styles.sideBarNavLinkWrapper} ${pathname === "/sports" ? styles.currentPage : ""}`}
+        >
+          <NavLink to="/sports">SPORTS WEAR</NavLink>
         </li>
-        <li className={styles.sideBarNavLinkWrapper}>
-          <NavLink to="/boots">Winter Footwear</NavLink>
+        <li
+          className={`${styles.sideBarNavLinkWrapper} ${pathname === "/boots" ? styles.currentPage : ""}`}
+        >
+          <NavLink to="/boots">WINTER WEAR</NavLink>
         </li>
       </ul>
     </nav>
