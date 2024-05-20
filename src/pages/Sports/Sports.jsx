@@ -3,16 +3,11 @@ import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDis
 import shoesOnSand from "./assets/shoes-on-sand.jpg";
 import { useContext } from "react";
 import ProductDataContext from "../../contexts/ProductDataContext";
-/* import CartContext from "../contexts/CartContext"; */
 
 const heading = "SPORTS SHOP";
 const text = `Step up your game with our top-notch selection of sports footwear. Whether
-you&apos;re hitting the court, the track, or the gym, we&apos;ve got you
-covered with a range of styles and technologies to suit every
-athlete&apos;s needs. From lightweight running shoes engineered for speed
-to durable basketball sneakers built for agility and support, our
-collection offers the perfect blend of style, functionality, and
-durability.`;
+you're hitting the court, the track, or the gym, we've got you
+covered with a range of styles and technologies to suit your every need.`;
 const imageAltText = "Sports Shoes";
 
 export default function SportsPage() {
