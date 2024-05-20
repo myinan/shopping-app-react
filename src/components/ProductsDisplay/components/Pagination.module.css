@@ -21,11 +21,11 @@
 }
 
 .pageNumLink:hover {
-  background-color: orange;
+  background-color: var(--primary);
   color: white;
 }
 
 .selected {
-  background-color: orange;
+  background-color: var(--primary);
   color: white;
 }
