@@ -17,16 +17,32 @@
 
 .searchInput {
   flex-grow: 1;
-  padding: 10px;
+  padding: 0.9rem;
+  border: none;
+  background-color: var(--accent-lightest);
+}
+
+.searchInput:focus {
+  outline: 1px solid black;
 }
 
 .innerButton {
   padding: 0 20px;
+  border: none;
+  color: var(--text-light);
+  background-color: var(--primary-darker);
+  font-weight: 600;
+}
+
+.innerButton:hover {
+  background-color: var(--accent);
 }
 
 /*  */
 
 .searchResults {
+  display: grid;
+  grid-auto-rows: max-content;
   margin-top: 15px;
 }
 
