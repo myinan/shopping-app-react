@@ -39,10 +39,10 @@ function Post({ post }) {
   return (
     <div className={styles.post}>
       <img src={post.src} alt={post.head} className={styles.postImage} />
-      <h4>{post.head}</h4>
-      <h3>{post.title}</h3>
+      <h6>{post.head}</h6>
+      <h4>{post.title}</h4>
       <p>{post.info}</p>
-      <Link to="#">READ MORE</Link>
+      <Link to="/blog">READ MORE</Link>
     </div>
   );
 }
