@@ -8,9 +8,8 @@ import ProductDataContext from "../../contexts/ProductDataContext";
 const heading = "BOOTS SHOP";
 const text = `Explore our curated range of boots designed to 
 elevate your style and withstand the demands of your daily adventures. 
-Discover timeless classics and on-trend designs crafted with premium 
-materials and expert craftsmanship. Whether you're conquering city streets 
-or wandering off the beaten path, find your perfect pair of boots here.`;
+Whether you're conquering city streets or wandering off the beaten path, 
+find your perfect pair of boots here.`;
 const imageAltText = "Winter Boots";
 
 export default function BootsPage() {
