@@ -48,7 +48,7 @@ function CartItem({ item }) {
   }
 
   return (
-    <tr>
+    <tr className={styles.cartItemRow}>
       <td className={styles.cartItemCell}>
         <div className={styles.cartItemMain}>
           <Link to={`/collection/${item.id}`}>
@@ -131,11 +131,11 @@ function FilledCartPage({ setShowAlert }) {
         <table className={styles.cartTable}>
           <thead>
             <tr>
-              <th>Item</th>
-              <th>Size</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
+              <th>ITEM</th>
+              <th>SIZE</th>
+              <th>PRICE</th>
+              <th>QUANTITY</th>
+              <th>SUBTOTAL</th>
             </tr>
           </thead>
           <tbody>
@@ -185,8 +185,10 @@ function EmptyCartPage({ showAlert, setShowAlert }) {
         Purchase successful.
       </Alert>
 
-      <h2>YOUR CART IS LOOKING EMPTY.</h2>
-      <Link to="/collection">SHOP NOW</Link>
+      <h2 className={styles.shopNowHeader}>YOUR CART IS LOOKING EMPTY.</h2>
+      <Link to="/collection" className={styles.shopNowLink}>
+        SHOP NOW
+      </Link>
     </div>
   );
 }
