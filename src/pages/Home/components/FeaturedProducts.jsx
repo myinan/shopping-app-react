@@ -11,6 +11,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 function FeaturedProduct({ product }) {
   const address = `/collection/${product.id}`;
+  const sortedVariantsArr = product.variants
+    .slice()
+    .sort((a, b) => a.size - b.size);
+  const title = product.title.split(" ").slice(0, 4).join(" ");
+
   return (
     <Link to={address}>
       <div className={styles.featuredItem}>
@@ -18,8 +23,8 @@ function FeaturedProduct({ product }) {
         <div className={styles.featuredItemInfoContainer}>
           <p>{product.brand.toUpperCase()}</p>
           <div className={styles.titleAndPriceInfo}>
-            <p>{product.title}</p>
-            <p>{product.base_price}$</p>
+            <p>{title}</p>
+            <p>{sortedVariantsArr[0].price}$</p>
           </div>
         </div>
       </div>
@@ -34,6 +39,7 @@ FeaturedProduct.propTypes = {
     brand: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    variants: PropTypes.array.isRequired,
   }).isRequired,
 };
 
