@@ -5,9 +5,13 @@
   padding: 3rem 8rem;
 }
 
+/*  */
+
 .sideBarAndProductsWrapper {
   display: flex;
 }
+
+/*  */
 
 .productsGrid {
   flex-grow: 1;
@@ -15,6 +19,8 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   column-gap: 20px;
 }
+
+/*  */
 
 .productCard {
   display: block;
@@ -24,15 +30,19 @@
   cursor: pointer;
 }
 
+.productCard a {
+  color: var(--text-dark);
+}
+
 .pdCardImgWrapper {
   height: 300px;
   overflow: hidden;
-  border: 5px solid wheat;
+  border: 5px solid var(--accent-lightest);
   padding: 0 1rem;
 }
 
 .pdCardImgWrapper:hover {
-  border: 5px solid brown;
+  border: 5px solid var(--primary);
 }
 
 .pdCardImgWrapper img {
@@ -42,28 +52,14 @@
 }
 
 .pdCardInfoContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
-  background-color: antiquewhite;
+  background-color: var(--accent-lightest);
   padding: 0.5rem 1rem 0 1rem;
-}
-
-.sideBarNav {
-  min-width: 200px;
-}
-
-.sideBarNavLinks {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  list-style: none;
-}
-
-.sideBarNavLinkWrapper {
-  font: inherit;
+  font-weight: 600;
 }
 
 .topInfo,
@@ -82,6 +78,32 @@
   justify-content: center;
 }
 
+.midInfo {
+  margin-bottom: 0.5rem;
+}
+
+.bottomInfo {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
 .bottomInfo p::after {
   content: "$";
+}
+
+/*  */
+
+.sideBarNav {
+  min-width: 200px;
+}
+
+.sideBarNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.sideBarNavLinkWrapper {
+  font: inherit;
 }

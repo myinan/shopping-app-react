@@ -8,6 +8,10 @@ import Pagination from "./components/Pagination";
 
 function ProductCell({ product }) {
   const address = `/collection/${product.id}`;
+  const sortedVariantsArr = product.variants
+    .slice()
+    .sort((a, b) => a.size - b.size);
+  const title = product.title.split(" ").slice(0, 4).join(" ");
 
   return (
     <Link to={address} className={styles.productCard}>
@@ -24,15 +28,9 @@ function ProductCell({ product }) {
           <p>{product.brand}</p>
           <p>{product.gender.toUpperCase()}</p>
         </div>
-        <div className={styles.midInfo}>
-          {product.title.length > 40 ? (
-            <p>{product.title.substring(0, 40) + "..."}</p>
-          ) : (
-            <p>{product.title}</p>
-          )}
-        </div>
+        <div className={styles.midInfo}>{title}</div>
         <div className={styles.bottomInfo}>
-          <p>{product.base_price}</p>
+          <p>{sortedVariantsArr[0].price}</p>
         </div>
       </div>
     </Link>
@@ -47,6 +45,7 @@ ProductCell.propTypes = {
     title: PropTypes.string.isRequired,
     gender: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    variants: PropTypes.array.isRequired,
   }).isRequired,
 };
 
