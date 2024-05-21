@@ -212,9 +212,13 @@ export default function CartPage() {
     }
   }, [showAlert, setShowAlert]);
 
-  return cart.length !== 0 ? (
-    <FilledCartPage setShowAlert={setShowAlert} />
-  ) : (
-    <EmptyCartPage showAlert={showAlert} setShowAlert={setShowAlert} />
+  return (
+    <main>
+      {cart.length !== 0 ? (
+        <FilledCartPage setShowAlert={setShowAlert} />
+      ) : (
+        <EmptyCartPage showAlert={showAlert} setShowAlert={setShowAlert} />
+      )}
+    </main>
   );
 }
