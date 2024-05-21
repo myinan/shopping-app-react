@@ -112,9 +112,9 @@ function FilledCartPage({ setShowAlert }) {
     setPending((prevVal) => !prevVal);
 
     setTimeout(() => {
+      setCart([]);
       setPending((prevVal) => !prevVal);
       setShowAlert(true);
-      setCart([]);
     }, 2000);
   }
 
@@ -124,7 +124,9 @@ function FilledCartPage({ setShowAlert }) {
   }, 0);
 
   return (
-    <div className={styles.cartPage}>
+    <div
+      className={`${styles.cartPage} ${pending ? styles.pointerEventsNone : ""}`}
+    >
       <h1 className={styles.cartTitle}>YOUR CART</h1>
 
       <form className={styles.cartForm}>
