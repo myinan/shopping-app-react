@@ -127,6 +127,11 @@ function ProductInfoBottom() {
 }
 
 export default function ProductInfo() {
+  const { error, loading } = useContext(ProductDetailContext);
+
+  if (error) return <p>An error has occurred.</p>;
+  if (loading) return <p>Loading...</p>;
+
   return (
     <div className={styles.productDetailsContainer}>
       <ProductInfoTop />

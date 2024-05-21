@@ -4,7 +4,10 @@ import ProductDetailContext from "../contexts/ProductDetailContext";
 import { useContext } from "react";
 
 export default function ProductImage() {
-  const { curElement } = useContext(ProductDetailContext);
+  const { error, loading, curElement } = useContext(ProductDetailContext);
+
+  if (error) return <p>An error has occurred.</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className={styles.productImgContainer}>

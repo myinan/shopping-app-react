@@ -9,25 +9,33 @@ export default function useCurrProductData() {
   const { bootsData, sportsData, featuredData } =
     useContext(ProductDataContext);
 
-  const { productsData: dataB } = bootsData;
-  const { productsData: dataS } = sportsData;
-  const { productsData: dataF } = featuredData;
+  const { productsData: dataB, error: errB, loading: loadingB } = bootsData;
+  const { productsData: dataS, error: errS, loading: loadingS } = sportsData;
+  const { productsData: dataF, error: errF, loading: loadingF } = featuredData;
+
+  let error = false;
+  let loading = true;
+  if (errB || errS || errF) error = true;
+  if (!loadingB && !loadingS && !loadingF) loading = false;
 
   const productsArray = useMemo(
     () => [...dataB, ...dataS, ...dataF],
     [dataB, dataS, dataF]
   );
 
-  const curElement = useMemo(
-    () => productsArray.find((product) => product.id === productId),
-    [productsArray, productId]
-  );
+  const curElement = useMemo(() => {
+    if (productsArray.length !== 0) {
+      return productsArray.find((product) => product.id === productId);
+    }
+  }, [productsArray, productId]);
 
   // This array is memoized so the useEffect doesn't mistake it as a new array
-  const sortedVariantsArr = useMemo(
-    () => curElement.variants.slice().sort((a, b) => a.size - b.size),
-    [curElement]
-  );
+  const sortedVariantsArr = useMemo(() => {
+    if (curElement) {
+      return curElement.variants.slice().sort((a, b) => a.size - b.size);
+    }
+    return [{}];
+  }, [curElement]);
 
   const [selectedVariant, setSelectedVariant] = useState(sortedVariantsArr[0]);
 
@@ -44,6 +52,8 @@ export default function useCurrProductData() {
   };
 
   return {
+    error,
+    loading,
     curElement, // The element in productsArray which it's id matches url "productId" parameter
     sortedVariantsArr, // Avaliable price/size variants of the current shoe item, sorted
     selectedVariant, // Selected price/size variant, initially the first item in sortedVariantsArr
