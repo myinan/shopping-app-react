@@ -7,19 +7,31 @@ export default function useProductsData(query) {
 
   useEffect(() => {
     let ignore = false;
-    if (!ignore) {
+
+    const fetchData = async () => {
       try {
-        fetch(`https://api.stockx.vlour.me/search?query=${query}`)
-          .then((response) => response.json())
-          .then((data) => {
-            setProductsData(data.hits);
-          });
+        const response = await fetch(
+          `https://api.stockx.vlour.me/search?query=${query}`
+        );
+        if (!response.ok) {
+          setError(`Error: ${response.statusText}`);
+        }
+        const data = await response.json();
+        if (!ignore) {
+          setProductsData(data.hits);
+        }
       } catch (err) {
-        setError(err);
+        if (!ignore) {
+          setError(err);
+        }
       } finally {
-        setLoading(false);
+        if (!ignore) {
+          setLoading(false);
+        }
       }
-    }
+    };
+
+    fetchData();
 
     return () => {
       ignore = true;
