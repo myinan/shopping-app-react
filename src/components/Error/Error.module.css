@@ -30,6 +30,10 @@
   transform: scale(1.1);
 }
 
+.errorPageTopContainer h6 {
+  margin-top: 1rem;
+}
+
 .errorPageLinksContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;

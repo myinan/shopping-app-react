@@ -14,7 +14,7 @@ export default function Error() {
           className={styles.errorPageImg}
         />
       </div>
-      <p>THIS IS AWKWARD...</p>
+      <h6>THIS IS AWKWARD...</h6>
       <p>
         This page either doesn&apos;t exist or is under construction. Sorry
         about that, here&apos;s a picture of a cat instead.
