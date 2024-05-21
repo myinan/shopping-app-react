@@ -88,15 +88,17 @@
 
 .removeBtnContainer button {
   border: none;
-  border-radius: 5px;
-  background-color: antiquewhite;
+  border-radius: 3px;
+  background-color: var(--accent-lightest);
   padding: 0.5rem 1rem;
   text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
 }
 
 .removeBtnContainer button:hover {
-  color: antiquewhite;
-  background-color: sienna;
+  color: var(--text-light);
+  background-color: brown;
 }
 
 /*  */
@@ -111,8 +113,18 @@
 
 .cartTotalPriceContainer {
   display: flex;
-  gap: 1rem;
+  gap: 0.7rem;
   border-bottom: 1px solid black;
+}
+
+.cartTotalPriceContainer p:nth-child(1) {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.cartTotalPriceContainer p:nth-child(2) {
+  font-size: 2.1rem;
+  font-weight: bold;
 }
 
 .checkoutBtn {
