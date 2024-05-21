@@ -83,7 +83,9 @@ function ProductInfoMiddle() {
           </div>
         </div>
 
-        <p>*Price may vary depending on shoe size.</p>
+        <p className={styles.productInfoWarning}>
+          *Price may vary depending on shoe size.
+        </p>
       </div>
     </div>
   );
@@ -106,10 +108,16 @@ function ProductInfoBottom() {
       >
         ADD TO CART
       </button>
-      {isAdded ? <p>*Product is already added to your cart.</p> : ""}
+      {isAdded ? (
+        <p className={styles.productInfoWarning}>
+          *Product is already added to your cart.
+        </p>
+      ) : (
+        ""
+      )}
       {!isAdded && !isAllowed ? (
-        <p>
-          Please contact our customer service to purchase more than 14 shoes.
+        <p className={styles.productInfoWarning}>
+          Please contact our customer service to purchase more than 14 pairs.
         </p>
       ) : (
         ""

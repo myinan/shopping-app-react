@@ -30,7 +30,7 @@
 }
 
 .productDetailPrice {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
 }
 
@@ -66,19 +66,30 @@
   gap: 0.8rem;
 }
 
+.productInfoWarning {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 /*  */
 
+.productButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .productButtonsContainer button {
-  border: 2px solid rgb(255, 128, 0);
+  border: 2px solid var(--primary-darker);
   font-weight: bold;
   border-radius: 1rem;
   width: 100%;
   padding: 0.5rem;
-  background-color: white;
-  color: rgb(255, 128, 0);
+  background-color: var(--main-bg);
+  color: var(--primary-darker);
 }
 
 .productButtonsContainer button:hover {
-  background-color: rgb(255, 128, 0);
-  color: white;
+  background-color: var(--primary-darker);
+  color: var(--text-light);
 }
