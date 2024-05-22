@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLocalStorage } from "@uidotdev/usehooks";
 import ProductDataContext from "./ProductDataContext";
 import CartContext from "./CartContext";
 import useOutletContextData from "../hooks/useContextData";
@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 const ContextProvider = ({ children }) => {
   const productsData = useOutletContextData();
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useLocalStorage("cart", []);
 
   return (
     <ProductDataContext.Provider value={productsData}>
