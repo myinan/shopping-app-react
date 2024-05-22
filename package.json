@@ -12,6 +12,7 @@
     "git:log": "git log --oneline --abbrev-commit --all --graph --decorate --color"
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
     "bootstrap": "^5.3.3",
     "react": "",
     "react-bootstrap": "^2.10.2",
