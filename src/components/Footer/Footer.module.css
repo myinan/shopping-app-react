@@ -314,4 +314,53 @@ footer {
 
 /* Mobile Styles (width < 600px) */
 @container (width < 600px) {
+  .topFooter {
+    height: auto;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .topFooterForm {
+    height: 50px;
+  }
+
+  .topFooter form:nth-child(3) input {
+    height: 100%;
+    width: 100%;
+  }
+
+  /*  */
+
+  .mainFooterTopSection {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .linksSectionContainer {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .contactSectionContainer {
+    padding-left: 0;
+  }
+
+  .mainFooterBottomSection {
+    display: grid !important;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .mainFooterBottomSection * {
+    width: min-content;
+  }
+
+  /*  */
+
+  .bottomFooter p {
+    text-align: center;
+  }
 }
