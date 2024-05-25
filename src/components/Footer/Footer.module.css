@@ -1,3 +1,9 @@
+footer {
+  container-type: inline-size;
+}
+
+/* Default Styles (Large Screens) */
+
 .topFooter {
   height: 140px;
   composes: flexCenter from "../../assets/global.css";
@@ -105,8 +111,8 @@
 .contactSectionContainer {
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
-  padding-left: 4rem;
   gap: 1.5rem;
+  padding-left: 4rem;
 }
 
 .contactInfoContainer {
@@ -183,4 +189,51 @@
 .bottomFooter p {
   font-size: 0.8rem;
   letter-spacing: 0.5px;
+}
+
+/* Laptop Styles (width < 1200px) */
+@container (width < 1200px) {
+  .mainFooter {
+    gap: 1rem;
+  }
+
+  .mainFooterTopSection {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .linksSectionContainer {
+    gap: 2rem;
+    justify-content: flex-start !important;
+    padding-right: 2rem;
+  }
+
+  .contactSectionContainer {
+    gap: 0;
+    padding-left: 2rem;
+  }
+
+  .contactInfoContainer {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+  }
+
+  .contactInfoContainer div:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+}
+
+/* Tablet Styles (width < 1000px) */
+@container (width < 1000px) {
+}
+
+/* Smaller Screen Tablet Styles (width < 800px) */
+@container (width < 800px) {
+}
+
+/* Mobile Styles (width < 600px) */
+@container (width < 600px) {
 }
