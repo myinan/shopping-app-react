@@ -205,7 +205,6 @@ footer {
 
   .linksSectionContainer {
     gap: 2rem;
-    justify-content: flex-start !important;
     padding-right: 2rem;
   }
 
@@ -228,6 +227,51 @@ footer {
 
 /* Tablet Styles (width < 1000px) */
 @container (width < 1000px) {
+  .topFooter {
+    gap: 1.2rem;
+    padding: 1rem;
+  }
+
+  .topFooter > h3 {
+    font-size: 1.5rem;
+  }
+
+  .topFooter > p {
+    font-size: 0.9rem;
+  }
+
+  .topFooterForm {
+    height: 60%;
+  }
+
+  /*  */
+
+  .linksSectionContainer {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    padding-right: 3rem;
+  }
+
+  .linksSectionContainer div:nth-child(3) {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+
+  .contactSectionContainer {
+    gap: 1rem;
+    padding-left: 3rem;
+  }
+
+  .contactInfoContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .contactInfoContainer div:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 2;
+  }
 }
 
 /* Smaller Screen Tablet Styles (width < 800px) */
