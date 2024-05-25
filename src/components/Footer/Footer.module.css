@@ -276,6 +276,40 @@ footer {
 
 /* Smaller Screen Tablet Styles (width < 800px) */
 @container (width < 800px) {
+  .topFooter {
+    height: auto;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.5fr;
+  }
+
+  .topFooter form:nth-child(3) {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+
+  /*  */
+
+  .mainFooterTopSection {
+    display: flex !important;
+  }
+
+  .linksSectionContainer {
+    width: fit-content;
+    display: flex !important;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 3rem;
+  }
+
+  .contactSectionContainer {
+    width: max-content;
+    gap: 1rem;
+    padding-left: 3rem;
+  }
+
+  .mainFooterBottomSection {
+    letter-spacing: 0.5px;
+  }
 }
 
 /* Mobile Styles (width < 600px) */
