@@ -1,3 +1,9 @@
+header {
+  container-type: inline-size;
+}
+
+/* Default Styles (Desktop and Tablet) */
+
 .logoButtonsContainer {
   position: relative;
   background-color: var(--primary);
@@ -98,4 +104,48 @@
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
+}
+
+/* Mobile Styles */
+@container (width < 600px) {
+  .logoContainer {
+    padding: 1rem;
+  }
+
+  .mainHeading {
+    font-size: 2rem;
+  }
+
+  .subHeading {
+    font-size: 1.2rem;
+  }
+
+  /*  */
+
+  .buttonsContainer {
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+    top: 0%;
+    transform: translateY(0%);
+    right: 0;
+    padding: 0;
+    margin-right: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  /*  */
+
+  .navLinksContainer {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .navLinksContainer > a {
+    font-size: 0.8rem;
+  }
+
+  .navLinksContainer > a:hover {
+    text-underline-offset: 3px;
+  }
 }
