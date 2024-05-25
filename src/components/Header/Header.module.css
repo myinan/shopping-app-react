@@ -106,7 +106,7 @@ header {
   text-underline-offset: 4px;
 }
 
-/* Mobile Styles */
+/* Mobile Styles (width < 600px) */
 @container (width < 600px) {
   .logoContainer {
     padding: 1rem;
