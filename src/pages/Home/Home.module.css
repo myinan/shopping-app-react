@@ -1,3 +1,5 @@
+/* Default Styles (Large Screens) */
+
 .carouselImg {
   height: 600px;
   width: 100%;
@@ -191,4 +193,38 @@
 
 .price {
   color: var(--primary-darker);
+}
+
+/*  */
+.shopNowSection {
+  container-type: inline-size;
+  container-name: shopNow;
+}
+
+/* Laptop Styles (width < 1200px) */
+@media (max-width: 1200px) {
+  .shopNowSection {
+    padding: 3rem 3rem;
+  }
+}
+
+/* Tablet Styles (width < 1000px) */
+@media (max-width: 800px) {
+  .shopNowSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Styles (width < 600px) */
+@media (max-width: 600px) {
+  .shopNowSection {
+    padding: 3rem 2rem;
+  }
+}
+
+@container shopNow (width < 600px) {
+  .rightSide a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
 }
