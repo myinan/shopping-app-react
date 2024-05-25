@@ -322,6 +322,10 @@ footer {
     align-items: center;
   }
 
+  .topFooter h3 {
+    text-align: center;
+  }
+
   .topFooterForm {
     height: 50px;
   }
