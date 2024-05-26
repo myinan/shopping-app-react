@@ -1,3 +1,5 @@
+/* Default Styles (Large Screens) */
+
 .productDetailsContainer {
   display: flex;
   flex-direction: column;
@@ -92,4 +94,71 @@
 .productButtonsContainer button:hover {
   background-color: var(--primary-darker);
   color: var(--text-light);
+}
+
+/*  */
+
+/* Tablet Styles (width < 1000px) */
+@container (width < 1000px) {
+  .sizeAndQuantityContainer {
+    gap: 1rem;
+  }
+}
+
+/* Tablet Styles (width < 800px) */
+@container (width < 800px) {
+  .productDetailsContainer {
+    max-width: min(90%, 450px);
+  }
+
+  .productButtonsContainer button {
+    width: 70%;
+  }
+}
+
+/* Mobile Styles (width < 600px) */
+@container (width < 600px) {
+  .productDetailDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .productButtonsContainer button {
+    width: 80%;
+  }
+}
+
+/* Smaller Screen Mobile Styles (width < 400px) */
+@container (width < 400px) {
+  .productDetailBrand {
+    font-size: 1.2rem;
+  }
+
+  .productDetailGender {
+    font-size: 0.9rem;
+  }
+
+  .productDetailTitle {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .productDetailPrice {
+    font-size: 1.4rem;
+  }
+
+  .productDetailDescription {
+    letter-spacing: 0;
+  }
+
+  .sizeAndQuantityContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .productButtonsContainer button {
+    width: 100%;
+  }
 }

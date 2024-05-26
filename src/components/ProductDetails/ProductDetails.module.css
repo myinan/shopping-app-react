@@ -1,4 +1,7 @@
+/* Default Styles (Large Screens) */
+
 .productPage {
+  container-type: inline-size;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -19,4 +22,47 @@
   display: block;
   object-fit: cover;
   object-position: center;
+}
+
+/* Laptop Styles (width < 1200px) */
+@media (max-width: 1200px) {
+  .productPage {
+    padding: 4rem;
+  }
+}
+
+/* Tablet Styles (width < 1000px) */
+@container (width < 1000px) {
+  .productImgContainer {
+    width: 550px;
+  }
+}
+
+/* Smaller Size Tablet Styles (width < 800px) */
+@media (max-width: 800px) {
+  .productPage {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+  }
+}
+
+/* Mobile Styles (width < 600px) */
+@container (width < 600px) {
+  .productImgContainer {
+    width: 300px;
+  }
+}
+
+/* Smaller Screen Mobile Styles (width < 400px) */
+@media (max-width: 400px) {
+  .productPage {
+    padding: 2rem;
+  }
+}
+
+@container (width < 400px) {
+  .productImgContainer {
+    width: 200px;
+  }
 }
