@@ -1,4 +1,7 @@
+/* Default Styles (Large Screens) */
+
 .cartPage {
+  container-type: inline-size;
   position: relative;
   display: flex;
   justify-content: center;
@@ -35,6 +38,7 @@
   align-items: center;
   grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
   border-bottom: 1px solid var(--accent);
+  gap: 1rem;
 }
 
 .cartTable tbody tr {
@@ -163,6 +167,7 @@
 /*  */
 
 .shopNowHeader {
+  text-align: center;
   letter-spacing: 1px;
 }
 
@@ -177,4 +182,85 @@
 
 .pointerEventsNone {
   pointer-events: none;
+}
+
+/*  */
+
+/* Tablet Styles (width < 1000px) */
+@container (width < 1000px) {
+  .cartTable th {
+    font-size: 0.8rem;
+  }
+
+  .cartItemRow p {
+    font-size: 0.9rem;
+  }
+
+  .cartItemQuantityContainer {
+    gap: 0.3rem;
+  }
+
+  .removeBtnContainer button {
+    font-size: 0.9rem;
+    background-color: rgb(255, 61, 61);
+    color: var(--text-light);
+    text-decoration: none;
+  }
+}
+
+/* Smaller Screen Tablet Styles (width < 800px) */
+@container (width < 800px) {
+  .cartTable tr {
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .cartTable thead tr th:nth-child(5) {
+    display: none;
+  }
+
+  .cartItemRow td:nth-child(5) {
+    display: none;
+  }
+
+  .cartItemMain img {
+    border: 3px solid var(--accent-lightest);
+  }
+
+  .cartItemMain p {
+    display: none;
+  }
+
+  .removeBtnContainer button {
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Mobile Styles (width < 600px) */
+@container (width < 600px) {
+  .cartItemMain img {
+    min-width: initial;
+    height: auto;
+    max-width: 70px;
+  }
+
+  .cartTotalPriceContainer p:nth-child(1) {
+    font-size: 0.8rem;
+  }
+
+  .cartTotalPriceContainer p:nth-child(2) {
+    font-size: 1.5rem;
+  }
+
+  .checkoutBtn {
+    padding: 0.6rem 1.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Smaller Mobile Styles (width < 400px) */
+@container (width < 400px) {
+  .cartItemMain img {
+    max-width: 50px;
+  }
 }

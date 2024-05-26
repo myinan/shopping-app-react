@@ -7,6 +7,7 @@ import Alert from "react-bootstrap/Alert";
 
 function CartItem({ item }) {
   const [, setCart] = useContext(CartContext);
+  const [buttonText, setButtonText] = useState("REMOVE");
   const total = item.price * item.quantity;
 
   function decreaseQuantity() {
@@ -47,6 +48,23 @@ function CartItem({ item }) {
     );
   }
 
+  useEffect(() => {
+    const updateButtonText = () => {
+      if (window.innerWidth < 500) {
+        setButtonText("X");
+      } else {
+        setButtonText("REMOVE");
+      }
+    };
+
+    updateButtonText();
+    window.addEventListener("resize", updateButtonText);
+
+    return () => {
+      window.removeEventListener("resize", updateButtonText);
+    };
+  }, []);
+
   return (
     <tr className={styles.cartItemRow}>
       <td className={styles.cartItemCell}>
@@ -85,7 +103,7 @@ function CartItem({ item }) {
       </td>
       <td className={styles.removeBtnContainer}>
         <button type="button" onClick={removeItem}>
-          REMOVE
+          {buttonText}
         </button>
       </td>
     </tr>
