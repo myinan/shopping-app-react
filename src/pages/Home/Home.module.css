@@ -152,7 +152,6 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  height: 500px;
 }
 
 .featuredItem:hover {
@@ -233,6 +232,10 @@
 
   .latestPostsSection {
     padding: 3rem 3rem;
+  }
+
+  .featuredContainer {
+    padding: 0 3rem 3rem 3rem;
   }
 }
 
