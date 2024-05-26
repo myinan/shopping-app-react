@@ -5,15 +5,7 @@ import DetailContextProvider from "./contexts/DetailContextProvider";
 import { useContext } from "react";
 import ProductDetailContext from "./contexts/ProductDetailContext";
 import Error from "../Error/Error";
-
-function Loading() {
-  return (
-    <div className={styles.loadingContainer}>
-      <div className={styles.loadingSpinner}></div>
-      <p className={styles.loadingText}>Loading...</p>
-    </div>
-  );
-}
+import Loading from "../Loading/Loading";
 
 function ProductDetailsContent() {
   const { error, loading } = useContext(ProductDetailContext);
