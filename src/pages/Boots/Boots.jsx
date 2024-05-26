@@ -3,7 +3,8 @@ import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDis
 import winterBoots from "./assets/winter-boots.jpg";
 import { useContext } from "react";
 import ProductDataContext from "../../contexts/ProductDataContext";
-/* import CartContext from "../../contexts/CartContext"; */
+import Error from "../../components/Error/Error";
+import Loading from "../../components/Loading/Loading";
 
 const heading = "BOOTS SHOP";
 const text = `Explore our curated range of boots designed to 
@@ -16,8 +17,8 @@ export default function BootsPage() {
   const { bootsData } = useContext(ProductDataContext);
   const { productsData, error, loading } = bootsData;
 
-  if (error) return <p>A network error was encountered</p>;
-  if (loading) return <p>Loading...</p>;
+  if (error) return <Error />;
+  if (loading) return <Loading />;
 
   return (
     <main>

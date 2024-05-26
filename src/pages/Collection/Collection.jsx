@@ -3,6 +3,8 @@ import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDis
 import shoesCollection from "./assets/shoes-collection.jpg";
 import { useContext } from "react";
 import ProductDataContext from "../../contexts/ProductDataContext";
+import Error from "../../components/Error/Error";
+import Loading from "../../components/Loading/Loading";
 
 const heading = "COLLECTION";
 const text = `Discover the best of both worlds with our exclusive COLLECTION, 
@@ -28,8 +30,8 @@ export default function CollectionPage() {
 
   const mergedData = [...sportsContextData, ...bootsContextData];
 
-  if (bootsError || sportsError) return <p>A network error was encountered</p>;
-  if (bootsLoading || sportsLoading) return <p>Loading...</p>;
+  if (bootsError || sportsError) return <Error />;
+  if (bootsLoading || sportsLoading) return <Loading />;
 
   return (
     <main>

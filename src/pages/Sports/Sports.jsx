@@ -3,6 +3,8 @@ import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDis
 import shoesOnSand from "./assets/shoes-on-sand.jpg";
 import { useContext } from "react";
 import ProductDataContext from "../../contexts/ProductDataContext";
+import Error from "../../components/Error/Error";
+import Loading from "../../components/Loading/Loading";
 
 const heading = "SPORTS SHOP";
 const text = `Step up your game with our top-notch selection of sports footwear. Whether
@@ -14,8 +16,8 @@ export default function SportsPage() {
   const { sportsData } = useContext(ProductDataContext);
   const { productsData, error, loading } = sportsData;
 
-  if (error) return <p>A network error was encountered</p>;
-  if (loading) return <p>Loading...</p>;
+  if (error) return <Error />;
+  if (loading) return <Loading />;
 
   return (
     <main>

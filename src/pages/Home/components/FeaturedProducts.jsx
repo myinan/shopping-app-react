@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import ProductDataContext from "../../../contexts/ProductDataContext";
+import Loading from "../../../components/Loading/Loading";
+import Error from "../../../components/Error/Error";
 
 import "../slick.css";
 import Slider from "react-slick";
@@ -93,8 +95,8 @@ export default function FeaturedProducts() {
   const { featuredData } = useContext(ProductDataContext);
   const { productsData, error, loading } = featuredData;
 
-  if (error) return <p>A network error was encountered</p>;
-  if (loading) return <p>Loading...</p>;
+  if (error) return <Error />;
+  if (loading) return <Loading />;
 
   return (
     <div className={styles.featuredProductsContainer}>
