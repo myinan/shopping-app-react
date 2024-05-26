@@ -1,9 +1,7 @@
-import styles from "../AboutUs.module.css";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import firstImg from "../assets/story-blog-images/blog-image-first.jpg";
 import secondImg from "../assets/story-blog-images/blog-image-second.jpg";
 import thirdImg from "../assets/story-blog-images/blog-image-third.jpg";
+import BlogPosts from "../../../components/BlogPosts/BlogPosts";
 
 const postsData = [
   {
@@ -35,36 +33,6 @@ const postsData = [
   },
 ];
 
-function Post({ post }) {
-  return (
-    <div className={styles.post}>
-      <img src={post.src} alt={post.head} className={styles.postImage} />
-      <h6>{post.head}</h6>
-      <h4>{post.title}</h4>
-      <p>{post.info}</p>
-      <Link to="/blog">READ MORE</Link>
-    </div>
-  );
-}
-
-Post.propTypes = {
-  post: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    head: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    info: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
 export default function StoryBlog() {
-  return (
-    <div className={styles.blogPostsSection}>
-      <h2>VISIT OUR BLOG</h2>
-      <div className={styles.postsContainer}>
-        {postsData.map((post, index) => (
-          <Post key={index} post={post} />
-        ))}
-      </div>
-    </div>
-  );
+  return <BlogPosts postsData={postsData} title={"VISIT OUR BLOG"} />;
 }
