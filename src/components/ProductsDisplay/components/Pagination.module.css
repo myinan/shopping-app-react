@@ -1,5 +1,10 @@
 .pageNumsTopNav {
+  container-type: inline-size;
+}
+
+.pageNumsTopNav {
   composes: flexCenter from "../../../assets/global.css";
+  margin-top: 1rem;
 }
 
 .pageNumsList {
@@ -28,4 +33,16 @@
 .selected {
   background-color: var(--primary);
   color: white;
+}
+
+/* Mobile Styles (width < 600px) */
+@container (width < 600px) {
+  .pageNumsList {
+    gap: 1rem;
+    padding-left: 0;
+  }
+
+  .pageNumListItem {
+    font-size: 1.2rem;
+  }
 }

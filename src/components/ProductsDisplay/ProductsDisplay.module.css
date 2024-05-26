@@ -1,4 +1,10 @@
 .productsTopWrapper {
+  container-type: inline-size;
+}
+
+/* Default Styles (Large Screens) */
+
+.productsTopWrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -118,4 +124,31 @@
 
 .currentPage {
   background-color: var(--primary);
+}
+
+/* Smaller Screen Tablet Styles (width < 800px) */
+@container (width < 800px) {
+  .sideBarNav {
+    display: none;
+  }
+}
+
+/* Mobile Styles (width < 600px) */
+@media (max-width: 600px) {
+  .productsTopWrapper {
+    padding: 2rem 1rem;
+  }
+}
+
+@container (width < 800px) {
+  .productsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .pdCardImgWrapper {
+    height: 200px;
+    overflow: hidden;
+    border: 4px solid var(--accent-lightest);
+    padding: 0 0.5rem;
+  }
 }

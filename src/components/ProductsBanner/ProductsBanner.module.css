@@ -1,4 +1,10 @@
 .ProductsBannerContainer {
+  container-type: inline-size;
+}
+
+/* Default Styles (Large Screens) */
+
+.ProductsBannerContainer {
   display: flex;
   background-color: antiquewhite;
 }
@@ -35,4 +41,17 @@
 
 .bannerImgWrapper:hover .bannerImg {
   transform: scale(1.05);
+}
+
+/* Smaller Screen Tablet Styles (width < 800px) */
+@media (max-width: 799px) {
+  .ProductsBannerContainer {
+    flex-direction: column;
+  }
+}
+
+@container (width < 800px) {
+  .bannerInfoContainer {
+    width: 100%;
+  }
 }
