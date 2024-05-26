@@ -3,7 +3,6 @@ import ProductsDisplaySection from "../../components/ProductsDisplay/ProductsDis
 import shoesCollection from "./assets/shoes-collection.jpg";
 import { useContext } from "react";
 import ProductDataContext from "../../contexts/ProductDataContext";
-/* import CartContext from "../../contexts/CartContext"; */
 
 const heading = "COLLECTION";
 const text = `Discover the best of both worlds with our exclusive COLLECTION, 
