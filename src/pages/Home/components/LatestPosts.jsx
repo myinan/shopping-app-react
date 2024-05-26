@@ -1,9 +1,7 @@
-import styles from "../Home.module.css";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import shoesSports from "../assets/latest-posts-images/shoes-sports.jpg";
 import sneakers from "../assets/latest-posts-images/sneakers.jpg";
 import shoesMany from "../assets/latest-posts-images/shoes-many.jpg";
+import BlogPosts from "../../../components/BlogPosts/BlogPosts";
 
 const postsData = [
   {
@@ -33,36 +31,6 @@ const postsData = [
   },
 ];
 
-function Post({ post }) {
-  return (
-    <div className={styles.post}>
-      <img src={post.src} alt={post.head} className={styles.postImage} />
-      <h5>{post.head}</h5>
-      <h3>{post.title}</h3>
-      <p>{post.info}</p>
-      <Link to="readmore">READ MORE</Link>
-    </div>
-  );
-}
-
-Post.propTypes = {
-  post: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    head: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    info: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
 export default function LatestPosts() {
-  return (
-    <div className={styles.latestPostsSection}>
-      <h2>LATEST POSTS</h2>
-      <div className={styles.postsContainer}>
-        {postsData.map((post, index) => (
-          <Post key={index} post={post} />
-        ))}
-      </div>
-    </div>
-  );
+  return <BlogPosts postsData={postsData} title={"LATEST POSTS"} />;
 }
