@@ -84,7 +84,7 @@ function CartItem({ item }) {
         <p>{`${total}$`}</p>
       </td>
       <td className={styles.removeBtnContainer}>
-        <button type="buton" onClick={removeItem}>
+        <button type="button" onClick={removeItem}>
           REMOVE
         </button>
       </td>
