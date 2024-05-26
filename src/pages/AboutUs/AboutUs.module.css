@@ -1,3 +1,5 @@
+/* Default Styles (Large Screens) */
+
 .storyHeader {
   display: flex;
   justify-content: center;
@@ -11,6 +13,7 @@
 .storyHeaderTitle {
   text-transform: uppercase;
   letter-spacing: 3px;
+  text-align: center;
 }
 
 .storyHeaderText {
@@ -23,6 +26,8 @@
 /*  */
 
 .storyMain {
+  container-type: inline-size;
+  container-name: storyMain;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,6 +46,7 @@
 
 .subSectionImgWrapper {
   overflow: hidden;
+  height: fit-content;
   box-shadow: 0px 0px 40px -20px rgba(0, 0, 0, 0.75);
 }
 
@@ -111,6 +117,48 @@
 
 /*  */
 
+.storyPhilantrophy {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: antiquewhite;
+  margin-bottom: 4rem;
+}
+
+.philantrophyInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 30px;
+}
+
+.philantrophyInfoContainer p {
+  text-align: end;
+  max-width: 700px;
+  line-height: 1.5em;
+}
+
+.philantrophyImgWrapper {
+  max-height: 500px;
+}
+
+.philantrophyImg {
+  object-fit: cover;
+  object-position: bottom;
+  width: 100%;
+  height: 100%;
+}
+
+.philanthropyLink {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-underline-offset: 4px;
+}
+
+/*  */
+
 .blogPostsSection {
   composes: flexCenter from "../../assets/global.css";
   flex-direction: column;
@@ -152,44 +200,103 @@
   color: var(--primary-darker);
 }
 
-/*  */
+/* Desktop Styles (width < 1200px) */
 
-.storyPhilantrophy {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background-color: antiquewhite;
-  margin-bottom: 4rem;
+@container storyMain (width <1200px) {
+  .storyMainSubSection {
+    padding: 2rem;
+  }
+
+  .subSectionImgWrapper img {
+    width: 400px;
+  }
 }
 
-.philantrophyInfoContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 20px;
-  padding: 30px;
+/* Laptop Styles (width < 1000px) */
+
+@container storyMain (width < 1000px) {
+  .subSectionImgWrapper img {
+    width: 100%;
+  }
+
+  .subSectionInfoText {
+    width: initial;
+    line-height: initial;
+    letter-spacing: initial;
+  }
 }
 
-.philantrophyInfoContainer p {
-  text-align: end;
-  max-width: 700px;
-  line-height: 1.5em;
+/* Tablet Styles (width < 800px) */
+
+@container storyMain (width < 800px) {
+  .storyMainSubSection {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .subSectionImgWrapper {
+    width: fit-content;
+    margin: auto;
+  }
+
+  .subSectionImgWrapper img {
+    width: 400px;
+  }
+
+  .subSectionInfoText {
+    line-height: 1.4em;
+    letter-spacing: 0.5px;
+  }
 }
 
-.philantrophyImgWrapper {
-  max-height: 500px;
+/* Mobile Styles (width < 600px) */
+
+@media (max-width: 600px) {
+  .storyHeader {
+    gap: 2rem;
+    margin: 3rem;
+    padding: 0.5rem;
+  }
 }
 
-.philantrophyImg {
-  object-fit: cover;
-  object-position: bottom;
-  width: 100%;
-  height: 100%;
+@container storyMain (width < 600px) {
+  .storyMainSubSection {
+    padding: 1rem;
+  }
+
+  .subSectionImgWrapper {
+    width: 80%;
+  }
+
+  .subSectionImgWrapper img {
+    width: 100%;
+  }
 }
 
-.philanthropyLink {
-  color: black;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-underline-offset: 4px;
+/* Smaller Mobile Styles (width < 400px) */
+
+@media (max-width: 400px) {
+  .storyHeader {
+    gap: 1rem;
+    margin: 2rem;
+    padding: 0.5rem;
+  }
+}
+
+@container storyMain (width < 400px) {
+  .storyMainSubSection {
+    padding: 0.5rem;
+  }
+
+  .subSectionInfoContainer {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 20px;
+    margin-left: 0;
+  }
+
+  .subSectionInfoHeader {
+    letter-spacing: 0.5px;
+  }
 }
