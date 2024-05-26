@@ -55,3 +55,14 @@
     width: 100%;
   }
 }
+
+/* Mobile Styles (width < 600px) */
+@container (width < 600px) {
+  .bannerInfoContainer {
+    padding: 1rem;
+  }
+
+  .bannerInfoContainer p {
+    font-size: 0.8rem;
+  }
+}

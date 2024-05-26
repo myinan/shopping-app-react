@@ -138,6 +138,10 @@
   .productsTopWrapper {
     padding: 2rem 1rem;
   }
+
+  .productCard {
+    font-size: 0.8rem;
+  }
 }
 
 @container (width < 800px) {
