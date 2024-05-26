@@ -165,7 +165,7 @@
   }
 }
 
-/* Tablet Styles (width < 1000px) */
+/* Smaller Screen Tablet Styles (width < 800px) */
 @media (max-width: 800px) {
   .shopNowSection {
     grid-template-columns: 1fr;
