@@ -118,6 +118,8 @@
 /*  */
 
 .storyPhilantrophy {
+  container-type: inline-size;
+  container-name: storyPhilantrophy;
   display: grid;
   grid-template-columns: 50% 50%;
   background-color: antiquewhite;
@@ -202,7 +204,7 @@
 
 /* Desktop Styles (width < 1200px) */
 
-@container storyMain (width <1200px) {
+@container storyMain (width < 1200px) {
   .storyMainSubSection {
     padding: 2rem;
   }
@@ -223,6 +225,12 @@
     width: initial;
     line-height: initial;
     letter-spacing: initial;
+  }
+}
+
+@container storyPhilantrophy (width < 1000px) {
+  .philantrophyImgWrapper {
+    max-height: 100%;
   }
 }
 
@@ -257,6 +265,11 @@
     margin: 3rem;
     padding: 0.5rem;
   }
+
+  .storyPhilantrophy {
+    display: flex !important;
+    flex-direction: column;
+  }
 }
 
 @container storyMain (width < 600px) {
@@ -270,6 +283,20 @@
 
   .subSectionImgWrapper img {
     width: 100%;
+  }
+
+  .subSectionLink {
+    font-size: 0.9rem;
+  }
+}
+
+@container storyPhilantrophy (width < 600px) {
+  .philantrophyInfoContainer {
+    align-items: flex-start;
+  }
+
+  .philantrophyInfoContainer p {
+    text-align: start;
   }
 }
 
