@@ -92,3 +92,18 @@
 .itemInfoContainer p:nth-child(2)::after {
   content: "$";
 }
+
+/* Smaller Screen Mobile Styles (width < 400px) */
+@media (max-width: 400px) {
+  .searchForm {
+    gap: 0;
+  }
+
+  .searchInput {
+    padding: 0.5rem;
+  }
+
+  .innerButton {
+    padding: 10px;
+  }
+}
