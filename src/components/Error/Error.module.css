@@ -1,3 +1,5 @@
+/* Default Styles (Large Screens) */
+
 .errorPageTopContainer {
   max-width: 650px;
   display: flex;
@@ -52,4 +54,39 @@
   padding: 0.7rem;
   border-radius: 5px;
   text-decoration: none;
+}
+
+/* Smaller Screen Tablet Styles (width < 800px) */
+@media (max-width: 800px) {
+  .errorPageImgWrapper {
+    width: 550px;
+  }
+}
+
+/* Mobile Styles (width < 600px) */
+@media (max-width: 600px) {
+  .errorPageImgWrapper {
+    width: 350px;
+  }
+
+  .errorPageLink {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Smaller Mobile Styles (width < 400px) */
+@media (max-width: 400px) {
+  .errorPageImgWrapper {
+    width: 250px;
+  }
+
+  .errorPageLinksContainer {
+    gap: 1rem;
+  }
+
+  .errorPageLink {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+  }
 }
